@@ -17,7 +17,7 @@ class JournalsController < ApplicationController
 
   # GET /journals/new
   def new
-    @journal = Journal.new
+    @journal = Journal.new_for_user current_user
   end
 
   # GET /journals/1/edit
