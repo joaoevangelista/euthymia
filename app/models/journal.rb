@@ -8,7 +8,7 @@ class Journal < ApplicationRecord
   # the current_user of authentication
   def self.all_by_user(user)
     return [] unless user
-    Journal.where(user: user)
+    Journal.where(user: user).order(updated_at: :desc)
   end
 
   # Create an instance of Journal bound to a user_id
