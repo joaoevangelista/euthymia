@@ -1,5 +1,9 @@
 # frozen_string_literal: true
-# :nodoc:
+# Main Policy that all others must inherit from
+# If those rules does not satisfy the model, they can be
+# overwiritten.
+# All methods relies on the base that the user must be logged in
+# and the resource must be owned by the user
 class ApplicationPolicy
   attr_reader :user, :record
 
@@ -9,23 +13,23 @@ class ApplicationPolicy
   end
 
   def index?
-    false
+    @user.eql? @record.user
   end
 
   def show?
-    scope.where(id: record.id).exists?
+    scope.where(id: record.id, user_id: record.user.id).exists?
   end
 
   def create?
-    false
+    @user
   end
 
   def new?
-    create?
+    @user
   end
 
   def update?
-    false
+    @user.eql? @record.user
   end
 
   def edit?
@@ -33,7 +37,7 @@ class ApplicationPolicy
   end
 
   def destroy?
-    false
+    @user.eql? @record.user
   end
 
   def scope
