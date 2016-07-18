@@ -1,3 +1,33 @@
+<section class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-xs-center">
+        Details of <%= @journal.title %>
+      </h1>
+    </div>
+  </div>
+  <div class="row space-3x">
+    <div class="col-xs-12">
+    <p class="lead">
+      <span class="text-muted"><i class="fa fa-fw fa-clock-o"></i></span>
+      Last time updated was at: <%= to_date @journal %>
+    </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p class="lead">
+        <span class="text-muted"><i class="fa fa-fw fa-check"></i></span>
+        You have <%= @journal.entries.count %> entries in this journal
+      </p>'
+    </div>
+  </div>
+  <!-- todo add lenght of the all words in journal -->
+  <!-- todo add avg percentage of emotions on this journal -->
+</section>
+
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
