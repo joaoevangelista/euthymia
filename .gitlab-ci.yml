@@ -1,36 +1,36 @@
  image: "ruby:2.3"
- 
+
  services:
    - postgres:latest
    - redis:alpine
- 
+
  stages:
    - lint
    - test
    - registry
-   
+
  cache:
   paths:
     - vendor/ruby
-    
+
  variables:
    POSTGRES_DB: euthymia_test
    POSTGRES_USER: euthymia
    POSTGRES_PASSWORD: eutymia
    RAILS_ENV: test
- 
+
  before_script:
    - sh ./scripts/install-node.sh
    - ruby -v                                   # Print out ruby version for debugging
    - gem install bundler  --no-ri --no-rdoc    # Bundler is not installed with the image
    - bundle install -j $(nproc) --path vendor  # Install dependencies into ./vendor/ruby
-   - gem install rubocop --no-rdoc --no-ri     # Install rubocop globally
+   - gem install rubocop rubocop-rspec --no-rdoc --no-ri     # Install rubocop globally
    - rake db:migrate
    - rake db:seed
- 
+
  after_script:
    - rake db:drop
- 
+
  rubocop:
    stage: lint
    variables:
@@ -39,7 +39,7 @@
    - rubocop
    tags:
    - docker
- 
+
  rspec:
    stage: test
    variables:
@@ -50,7 +50,7 @@
    - bundle exec rspec
    tags:
    - docker
- 
+
  build:image:
    image: docker:git
    services:
