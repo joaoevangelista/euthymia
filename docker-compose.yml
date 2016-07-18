@@ -10,7 +10,7 @@ services:
       POSTGRES_USER: euthymia
       MAIL_USER: euthymia.notifier@gmail.com
     env_file:
-      - ./stronghold.env
+      - ./euthymia.env
     links:
       - postgres
     depends_on:
@@ -21,4 +21,4 @@ services:
       - '5432:5432'
     environment:
       POSTGRES_PASSWORD: yourpassword
-      POSTGRES_USER: stronghold
+      POSTGRES_USER: euthymia
