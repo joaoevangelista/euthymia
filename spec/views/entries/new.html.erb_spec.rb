@@ -2,14 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "entries/new", type: :view do
   before(:each) do
-    assign(:entry, Entry.new(
-      :user => nil,
-      :journal => nil,
-      :favorite => false,
-      :title => "MyString",
-      :body => "MyText",
-      :accomplishment => "MyString"
-    ))
+    user = FactoryGirl.create(:user)
+    journal = FactoryGirl.create(:journal, user: user)
+    @entry = Entry.new_for_journal journal
   end
 
   it "renders new entry form" do

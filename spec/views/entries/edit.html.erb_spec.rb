@@ -2,14 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "entries/edit", type: :view do
   before(:each) do
-    @entry = assign(:entry, Entry.create!(
-      :user => nil,
-      :journal => nil,
-      :favorite => false,
-      :title => "MyString",
-      :body => "MyText",
-      :accomplishment => "MyString"
-    ))
+    user = FactoryGirl.create(:user)
+    journal = FactoryGirl.create(:journal, user: user)
+    @entry = FactoryGirl.create(:entry, journal: journal, user: user)
   end
 
   it "renders the edit entry form" do

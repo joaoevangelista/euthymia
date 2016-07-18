@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :entry do
-    user nil
-    journal nil
+    user_id user
+    journal_id journal
     favorite false
-    title "MyString"
-    body "MyText"
-    accomplishment "MyString"
+    title "Best day ever"
+    body "Some long content"
+    accomplishment ""
   end
 end

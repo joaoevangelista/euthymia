@@ -2,33 +2,14 @@ require 'rails_helper'
 
 RSpec.describe "entries/index", type: :view do
   before(:each) do
-    assign(:entries, [
-      Entry.create!(
-        :user => nil,
-        :journal => nil,
-        :favorite => false,
-        :title => "Title",
-        :body => "MyText",
-        :accomplishment => "Accomplishment"
-      ),
-      Entry.create!(
-        :user => nil,
-        :journal => nil,
-        :favorite => false,
-        :title => "Title",
-        :body => "MyText",
-        :accomplishment => "Accomplishment"
-      )
-    ])
+    user = FactoryGirl.create(:user)
+    journal = FactoryGirl.create(:journal, user: user)
+    @entries = [FactoryGirl.create(:entry, journal: journal, user: user),
+       FactoryGirl.create(:entry, journal: journal, user: user)]
   end
 
   it "renders a list of entries" do
     render
-    assert_select "tr>td", :text => nil.to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
-    assert_select "tr>td", :text => false.to_s, :count => 2
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => "Accomplishment".to_s, :count => 2
+    assert_select "tr>td", :text => "Best day ever".to_s, :count => 2
   end
 end
