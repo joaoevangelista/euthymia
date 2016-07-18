@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="pull-xs-right">
-      <%= link_to 'New Journal', new_journal_path, class: 'btn btn-sm btn-primary-outline' %>
+        <%= link_to 'New Journal', new_journal_path, class: 'btn btn-sm btn-primary-outline' %>
       </div>
     </div>
   </div>
@@ -11,35 +11,28 @@
       <h1 class="text-xs-center">Journals</h1>
     </div>
   </div>
-  <div class="row">
+  <div class="row space">
     <div class="col-xs-12">
       <% if @journals.empty? %>
-         <p class="lead text-xs-center">Journals are used to organize your entries, but there is no one right now.</p>
-         <%= link_to 'You can create your first !', new_journal_path %>
+      <p class="lead text-xs-center">Journals are used to organize your entries, but there is no one right now.</p>
+      <%= link_to 'You can create your first !', new_journal_path %>
       <% else %>
-        <div class="table responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th colspan="6"></th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <% @journals.each do |journal| %>
-                <tr>
-                  <td><%= link_to journal.title, journal %></td>
-                  <td class="td-option"><%= link_to icon('eye'), journal %></td>
-                  <td class="td-option"><%= link_to icon('pencil-square-o'), edit_journal_path(journal) %></td>
-                  <td class="td-option"><%= link_to icon('trash-o'), journal,
-                   method: :delete, data: { confirm: 'Are you sure? All entries of this journal will be deleted too!' } %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
-       <% end %>
+      <div class="table responsive">
+        <table class="table">
+          <tbody>
+            <% @journals.each do |journal| %>
+            <tr>
+              <td><%= link_to journal.title, journal %></td>
+              <td class="td-option"><%= link_to icon('eye'), journal %></td>
+              <td class="td-option"><%= link_to icon('pencil-square-o'), edit_journal_path(journal) %></td>
+              <td class="td-option"><%= link_to icon('trash-o'), journal,
+              method: :delete, data: { confirm: 'Are you sure? All entries of this journal will be deleted too!' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <% end %>
     </div>
   </div>
 </section>
