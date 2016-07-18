@@ -1,0 +1,32 @@
+require: rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.3
+  DisplayCopNames: true
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/*'
+    - 'db/fixtures/**/*'
+    - 'tmp/**/*'
+    - 'bin/**/*'
+    - rethinkdb_data/**/*
+    - config/initializers/**/*
+    - config/secrets.*
+    - db/migrate/**
+
+Metrics/LineLength:
+  Max: 95
+Metrics/AbcSize:
+  Max: 25
+Metrics/MethodLength:
+  Max: 20
+Style/ColonMethodCall:
+  Enabled: false
+RSpec/ExampleLength:
+  Max: 10
+RSpec/InstanceVariable:
+  Enabled: false
+RSpec/VerifiedDoubles:
+   Enabled: false
+Metrics/ClassLength:
+  Max: 150
