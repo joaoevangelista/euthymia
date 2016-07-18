@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  resources :journals
   get '/' => 'home#index', as: :root
 
   devise_for :users, controllers: { registrations: 'registrations' }
