@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+# A journal is a collection of entries that a user owns
 class Journal < ApplicationRecord
   validates :title, presence: true
   belongs_to :user
