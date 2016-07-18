@@ -2,10 +2,13 @@ require 'rails_helper'
 
 RSpec.describe JournalsController, type: :controller do
 
+  let(:user) { FactoryGirl.create(:user) }
 
-  let(:user) {
-    FactoryGirl.create(:user)
-  }
+  before(:each) do
+    @request.env['devise.mapping'] = Devise.mappings[:user]
+    sign_in user
+  end
+
 
   let(:valid_attributes) {
     {title: 'My precious confessions', user_id: user.id }

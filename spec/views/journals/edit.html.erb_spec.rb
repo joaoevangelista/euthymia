@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "journals/edit", type: :view do
+
   before(:each) do
     @journal = FactoryGirl.create(:journal, user: FactoryGirl.create(:user))
   end
