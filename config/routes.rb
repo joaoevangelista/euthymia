@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :entries
-  resources :journals
+
+  resources :journals do
+    resources :entries
+  end
   get '/' => 'home#index', as: :root
 
   devise_for :users, controllers: { registrations: 'registrations' }

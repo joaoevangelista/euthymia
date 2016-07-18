@@ -6,12 +6,22 @@
       </h1>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="pull-md-right">
+        <small>
+          <%= link_to icon('pencil', 'Edit', class: 'fa-fw'), edit_journal_path(@journal),
+          class: 'btn btn-xs-block btn-primary-outline btn-sm' %>
+        </small>
+      </div>
+    </div>
+  </div>
   <div class="row space-3x">
     <div class="col-xs-12">
-    <p class="lead">
-      <span class="text-muted"><i class="fa fa-fw fa-clock-o"></i></span>
-      Last time updated was at: <%= update_time_of @journal %>
-    </p>
+      <p class="lead">
+        <span class="text-muted"><i class="fa fa-fw fa-clock-o"></i></span>
+        Last time updated was at: <%= update_time_of @journal %>
+      </p>
     </div>
   </div>
   <div class="row">
@@ -19,26 +29,16 @@
       <p class="lead">
         <span class="text-muted"><i class="fa fa-fw fa-check"></i></span>
         You have <%= @journal.entries.count %> entries in this journal
-      </p>'
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p class="lead">
+        <%= link_to icon('file-text-o', 'See the entries', class: 'fa-fw'), journal_entries_path(@journal) %>
+      </p>
     </div>
   </div>
   <!-- todo add lenght of the all words in journal -->
   <!-- todo add avg percentage of emotions on this journal -->
 </section>
-
-
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @journal.title %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @journal.user %>
-</p>
-
-<%= link_to 'Edit', edit_journal_path(@journal) %> |
-<%= link_to 'Back', journals_path %>
