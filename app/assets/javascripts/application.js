@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require tether
+//= require bootstrap
+//= require zen-form
 //= require turbolinks
 //= require_tree .
