@@ -1,11 +1,11 @@
 class JournalsController < ApplicationController
   before_action :set_journal, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  
+
   # GET /journals
   # GET /journals.json
   def index
-    @journals = Journal.all
+    @journals = Journal.all_by_user current_user
   end
 
   # GET /journals/1
@@ -65,7 +65,7 @@ class JournalsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_journal
-      @journal = Journal.find(params[:id])
+      @journal = Journal.find_by_user(params[:id], current_user)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
