@@ -21,9 +21,10 @@
  
  before_script:
    - sh ./scripts/install-node.sh
-   - gem install bundler         # Bundler is not installed with the image
-   - gem install rubocop         # Install rubocop globally
-   - bundle install -j $(nproc)  # Install dependencies
+   - ruby -v                                   # Print out ruby version for debugging
+   - gem install bundler  --no-ri --no-rdoc    # Bundler is not installed with the image
+   - bundle install -j $(nproc) --path vendor  # Install dependencies into ./vendor/ruby
+   - gem install rubocop --no-rdoc --no-ri     # Install rubocop globally
    - rake db:migrate
    - rake db:seed
  
