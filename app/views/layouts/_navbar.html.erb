@@ -1,0 +1,23 @@
+
+<!-- .navbar -->
+<nav class="navbar navbar-full navbar-light bg-light">
+    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">
+    &#9776;
+    </button>
+    <a class="navbar-brand" href="#">
+
+    </a>
+    <div class="collapse navbar-toggleable-md" id="mainNavbarCollapse">
+        <ul class="nav navbar-nav pull-lg-right">
+            <% if user_signed_in? %>
+            <%= render 'layouts/profile_menu' %>
+            <% else %>
+            <li>
+              <%= link_to icon('sign-in', t('user.sign_in'), class: 'fa-fw'),
+               new_user_session_path, class: 'nav-link' %>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+</nav>
+<!-- /.navbar -->
