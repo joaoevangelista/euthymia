@@ -1,5 +1,6 @@
 .entry-item {
   padding: 2rem;
+  background-color: lighten($gray-lighter, 5%);
 }
 
 .star {
@@ -7,5 +8,5 @@
 }
 
 .card {
-  border: 2px solid $gray-lighter;
+  border: 2px solid lighten($gray-light, 15%);
 }
