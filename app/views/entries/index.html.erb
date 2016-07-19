@@ -6,8 +6,14 @@
 <section class="container">
   <div class="row">
     <div class="col-xs-12 col-md-10 col-md-offset-1">
+      <% if @entries.empty? %>
+      <p class="lead text-xs-center">
+        Oh, no entries yet on this journal. Do you want to create a <%= link_to 'new one', new_journal_entry_path(@journal) %> ?
+      </p>
+      <% else %>
       <% @entries.each do |entry| %>
       <%= render 'entries/entry_item', entry: entry %>
+      <% end %>
       <% end %>
     </div>
   </div>
