@@ -31,7 +31,8 @@
 # timeout: 30                          # waits untill restarting the Rails server, in seconds.
 # zeus_plan: server                    # custom plan in zeus, only works with `zeus: true`.
 # zeus: false                          # enables zeus gem.
-# CLI: 'rails server'                  # customizes runner command. Omits all options except `pid_file`!
+# CLI: 'rails server'
+# customizes runner command. Omits all options except `pid_file`!
 guard :rspec, cmd: 'bundle exec rspec' do
   require 'guard/rspec/dsl'
   dsl = Guard::RSpec::Dsl.new(self)
