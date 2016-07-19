@@ -33,7 +33,10 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to [@entry.journal, @entry], notice: 'Entry was successfully created.' }
+        format.html do
+          redirect_to [@entry.journal, @entry],
+                      notice: 'Entry was successfully created.'
+        end
         format.json { render :show, status: :created, location: [@entry.journal, @entry] }
       else
         format.html { render :new }
@@ -47,7 +50,10 @@ class EntriesController < ApplicationController
   def update
     respond_to do |format|
       if @entry.update(entry_params)
-        format.html { redirect_to [@entry.journal, @entry], notice: 'Entry was successfully updated.' }
+        format.html do
+          redirect_to [@entry.journal, @entry],
+                      notice: 'Entry was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: [@entry.journal, @entry] }
       else
         format.html { render :edit }
@@ -61,7 +67,10 @@ class EntriesController < ApplicationController
   def destroy
     @entry.destroy
     respond_to do |format|
-      format.html { redirect_to journal_entries_path(@entry.journal), notice: 'Entry was successfully destroyed.' }
+      format.html do
+        redirect_to journal_entries_path(@entry.journal),
+                    notice: 'Entry was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end
