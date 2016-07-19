@@ -20,15 +20,13 @@ module ApplicationHelper
     end
   end
 
-  def gravatar(email, size = 25)
-    # Render a gravatar url based on the user's email
-    def gravatar(email, size = 50)
-      hash = Digest::MD5::hexdigest email
-      "https://gravatar.com/avatar/#{hash}.png?s=#{size}"
-    end
+  # Render a gravatar url based on the user's email
+  def gravatar(email, size = 50)
+    hash = Digest::MD5::hexdigest email
+    "https://gravatar.com/avatar/#{hash}.png?s=#{size}"
   end
 
   def back_link(href)
-    link_to icon('angle-left','', class: 'fa-fw'), href, class: 'navbar-brand text-orange'
+    link_to icon('angle-left', '', class: 'fa-fw'), href, class: 'navbar-brand text-orange'
   end
 end
