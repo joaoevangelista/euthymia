@@ -1,3 +1,11 @@
-// Place all the styles related to the Entries controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.entry-item {
+  padding: 2rem;
+}
+
+.star {
+  color: #FFE312;
+}
+
+.card {
+  border: 2px solid $gray-lighter;
+}
