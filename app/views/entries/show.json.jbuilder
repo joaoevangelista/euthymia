@@ -1,1 +1,4 @@
-json.extract! @entry, :id, :user_id, :journal_id, :favorite, :title, :body, :accomplishment, :created_at, :updated_at
+# frozen_string_literal: true
+json.extract! @entry, :id, :user_id, :journal_id, :favorite,
+              :title, :body, :accomplishment,
+              :created_at, :updated_at

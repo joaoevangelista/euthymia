@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+# :nodoc:
 class EntriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
@@ -64,12 +66,15 @@ class EntriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_entry
-      @entry = Entry.find_by_user(params[:id], params[:journal_id], current_user)
-    end
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def entry_params
-      params.require(:entry).permit(:user_id, :journal_id, :favorite, :title, :body, :accomplishment)
-    end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_entry
+    @entry = Entry.find_by_user(params[:id], params[:journal_id], current_user)
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def entry_params
+    params.require(:entry).permit(:user_id, :journal_id, :favorite,
+                                  :title, :body, :accomplishment)
+  end
 end
