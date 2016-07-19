@@ -11,7 +11,6 @@ RSpec.describe EntriesController, type: :controller do
     sign_in user
   end
 
-
   let(:journal) do
     FactoryGirl.create(:journal, user: user)
   end
@@ -37,7 +36,7 @@ RSpec.describe EntriesController, type: :controller do
   describe 'GET #index' do
     it 'assigns all entries as @entries' do
       entry = Entry.create! valid_attributes
-      get :index, params: {journal_id: entry.journal}, session: valid_session
+      get :index, params: { journal_id: entry.journal }, session: valid_session
       expect(assigns(:entries)).to eq([entry])
     end
   end
@@ -45,14 +44,14 @@ RSpec.describe EntriesController, type: :controller do
   describe 'GET #show' do
     it 'assigns the requested entry as @entry' do
       entry = Entry.create! valid_attributes
-      get :show, params: { journal_id: journal.id , id: entry.to_param }, session: valid_session
+      get :show, params: { journal_id: journal.id, id: entry.to_param }, session: valid_session
       expect(assigns(:entry)).to eq(entry)
     end
   end
 
   describe 'GET #new' do
     it 'assigns a new entry as @entry' do
-      get :new, params: {journal_id: journal}, session: valid_session
+      get :new, params: { journal_id: journal }, session: valid_session
       expect(assigns(:entry)).to be_a_new(Entry)
     end
   end
@@ -60,7 +59,7 @@ RSpec.describe EntriesController, type: :controller do
   describe 'GET #edit' do
     it 'assigns the requested entry as @entry' do
       entry = Entry.create! valid_attributes
-      get :edit, params: { journal_id: journal , id: entry.to_param }, session: valid_session
+      get :edit, params: { journal_id: journal, id: entry.to_param }, session: valid_session
       expect(assigns(:entry)).to eq(entry)
     end
   end
@@ -69,7 +68,7 @@ RSpec.describe EntriesController, type: :controller do
     context 'with valid params' do
       it 'creates a new Entry' do
         expect do
-          post :create, params: {journal_id: journal, entry: valid_attributes },
+          post :create, params: { journal_id: journal, entry: valid_attributes },
                         session: valid_session
         end.to change(Entry, :count).by(1)
       end
@@ -82,7 +81,7 @@ RSpec.describe EntriesController, type: :controller do
       end
 
       it 'redirects to the created entry' do
-        post :create, params: {journal_id: journal, entry: valid_attributes },
+        post :create, params: { journal_id: journal, entry: valid_attributes },
                       session: valid_session
         expect(response).to redirect_to(journal_entry_path(Entry.last.journal, Entry.last))
       end
@@ -90,7 +89,7 @@ RSpec.describe EntriesController, type: :controller do
 
     context 'with invalid params' do
       it 'assigns a newly created but unsaved entry as @entry' do
-        post :create, params: {journal_id: journal, entry: invalid_attributes },
+        post :create, params: { journal_id: journal, entry: invalid_attributes },
                       session: valid_session
         expect(assigns(:entry)).to be_a_new(Entry)
       end
@@ -111,7 +110,7 @@ RSpec.describe EntriesController, type: :controller do
 
       it 'updates the requested entry' do
         entry = Entry.create! valid_attributes
-        put :update, params: { journal_id: journal.id , id: entry.to_param, entry: new_attributes },
+        put :update, params: { journal_id: journal.id, id: entry.to_param, entry: new_attributes },
                      session: valid_session
         entry.reload
         skip('Add assertions for updated state')
@@ -119,14 +118,14 @@ RSpec.describe EntriesController, type: :controller do
 
       it 'assigns the requested entry as @entry' do
         entry = Entry.create! valid_attributes
-        put :update, params: { journal_id: journal.id , id: entry.to_param, entry: valid_attributes },
+        put :update, params: { journal_id: journal.id, id: entry.to_param, entry: valid_attributes },
                      session: valid_session
         expect(assigns(:entry)).to eq(entry)
       end
 
       it 'redirects to the entry' do
         entry = Entry.create! valid_attributes
-        put :update, params: { journal_id: journal.id , id: entry.to_param, entry: valid_attributes },
+        put :update, params: { journal_id: journal.id, id: entry.to_param, entry: valid_attributes },
                      session: valid_session
         expect(response).to redirect_to(journal_entry_path(entry.journal, entry))
       end
@@ -135,14 +134,14 @@ RSpec.describe EntriesController, type: :controller do
     context 'with invalid params' do
       it 'assigns the entry as @entry' do
         entry = Entry.create! valid_attributes
-        put :update, params: { journal_id: journal.id , id: entry.to_param, entry: invalid_attributes },
+        put :update, params: { journal_id: journal.id, id: entry.to_param, entry: invalid_attributes },
                      session: valid_session
         expect(assigns(:entry)).to eq(entry)
       end
 
       it "re-renders the 'edit' template" do
         entry = Entry.create! valid_attributes
-        put :update, params: { journal_id: journal.id , id: entry.to_param, entry: invalid_attributes },
+        put :update, params: { journal_id: journal.id, id: entry.to_param, entry: invalid_attributes },
                      session: valid_session
         expect(response).to render_template('edit')
       end
@@ -153,13 +152,13 @@ RSpec.describe EntriesController, type: :controller do
     it 'destroys the requested entry' do
       entry = Entry.create! valid_attributes
       expect do
-        delete :destroy, params: { journal_id: journal.id , id: entry.to_param }, session: valid_session
+        delete :destroy, params: { journal_id: journal.id, id: entry.to_param }, session: valid_session
       end.to change(Entry, :count).by(-1)
     end
 
     it 'redirects to the entries list' do
       entry = Entry.create! valid_attributes
-      delete :destroy, params: { journal_id: journal.id , id: entry.to_param }, session: valid_session
+      delete :destroy, params: { journal_id: journal.id, id: entry.to_param }, session: valid_session
       expect(response).to redirect_to(journal_entries_url(entry.journal))
     end
   end

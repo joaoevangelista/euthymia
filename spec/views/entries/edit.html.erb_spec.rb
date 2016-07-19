@@ -4,14 +4,14 @@ require 'rails_helper'
 RSpec.describe 'entries/edit', type: :view do
   before(:each) do
     user = FactoryGirl.create(:user)
-    journal = FactoryGirl.create(:journal, user: user)
-    @entry = FactoryGirl.create(:entry, journal: journal, user: user)
+    @journal = FactoryGirl.create(:journal, user: user)
+    @entry = FactoryGirl.create(:entry, journal: @journal, user: user)
   end
 
   it 'renders the edit entry form' do
     render
 
-    assert_select 'form[action=?][method=?]', journal_entry_path(@entry.journal, @entry), 'post' do
+    assert_select 'form[action=?][method=?]', journal_entry_path(@journal, @entry), 'post' do
       assert_select 'input#entry_user_id[name=?]', 'entry[user_id]'
 
       assert_select 'input#entry_journal_id[name=?]', 'entry[journal_id]'

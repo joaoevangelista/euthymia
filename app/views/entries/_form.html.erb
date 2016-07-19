@@ -7,7 +7,14 @@
         prohibited this entry from being saved</p>
     </div>
   <% end %>
-
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="pull-xs-right">
+        <%= f.check_box :favorite %>
+        <label for="entry_favorite"></label>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-xs-12">
       <div class="form-group <%= entry.errors[:title].empty? ? '' : 'has-danger' %>">

@@ -40,3 +40,24 @@ textarea.form-text {
   background: #fff;
   font-size: 2.3rem;
 }
+
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #ff5555;
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+input[type=checkbox] + label:before { content: "\f08a"; } /* unchecked icon */
+input[type=checkbox] + label:before { letter-spacing: 10px; } /* space between checkbox and label */
+
+input[type=checkbox]:checked + label:before { content: "\f004"; } /* checked icon */
+input[type=checkbox]:checked + label:before { letter-spacing: 10px; } /* allow space for check mark */
+
+ // Zen Form
+textarea.input {
+
+}
