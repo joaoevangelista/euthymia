@@ -11,7 +11,7 @@ RSpec.describe 'entries/edit', type: :view do
   it 'renders the edit entry form' do
     render
 
-    assert_select 'form[action=?][method=?]', entry_path(@entry), 'post' do
+    assert_select 'form[action=?][method=?]', journal_entry_path(@entry.journal, @entry), 'post' do
       assert_select 'input#entry_user_id[name=?]', 'entry[user_id]'
 
       assert_select 'input#entry_journal_id[name=?]', 'entry[journal_id]'
