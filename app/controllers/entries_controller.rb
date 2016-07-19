@@ -23,6 +23,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/1/edit
   def edit
+    @journal = @entry.journal
   end
 
   # POST /entries
@@ -32,8 +33,8 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
-        format.json { render :show, status: :created, location: @entry }
+        format.html { redirect_to [@entry.journal, @entry], notice: 'Entry was successfully created.' }
+        format.json { render :show, status: :created, location: [@entry.journal, @entry] }
       else
         format.html { render :new }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
@@ -46,8 +47,8 @@ class EntriesController < ApplicationController
   def update
     respond_to do |format|
       if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
-        format.json { render :show, status: :ok, location: @entry }
+        format.html { redirect_to [@entry.journal, @entry], notice: 'Entry was successfully updated.' }
+        format.json { render :show, status: :ok, location: [@entry.journal, @entry] }
       else
         format.html { render :edit }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
@@ -60,7 +61,7 @@ class EntriesController < ApplicationController
   def destroy
     @entry.destroy
     respond_to do |format|
-      format.html { redirect_to entries_url, notice: 'Entry was successfully destroyed.' }
+      format.html { redirect_to journal_entries_path(@entry.journal), notice: 'Entry was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

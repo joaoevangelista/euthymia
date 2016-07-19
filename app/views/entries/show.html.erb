@@ -1,10 +1,22 @@
 <section class="container">
   <div class="row">
-      <div class="col-xs-12">
-        <div class="pull-xs-right">
-          <%= favorite_button @entry %>
+    <div class="col-xs-12">
+      <div class="pull-xs-right">
+        <%= favorite_button @entry %>
+      </div>
+      <div class="pull-xs-left">
+        <div class="dropdown">
+          <button class="btn btn-link dropdown-toggle" type="button" id="options_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span><i class="fa fa-fw fa-cog"></i></span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="options_menu">
+            <%= link_to 'Edit', edit_journal_entry_path(@entry.journal, @entry), class: 'dropdown-item' %>
+            <%= link_to 'Delete', journal_entry_path(@entry.journal, @entry), class: 'dropdown-item',
+            method: :delete, data: {confirm: 'Are you sure ? This can not be undone!'} %>
+          </div>
         </div>
       </div>
+    </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
@@ -18,24 +30,26 @@
       </span>
     </div>
   </div>
-  <div class="row">
+  <div class="row space-3x">
     <div class="col-xs-12">
-      <%= @entry.body %>
+      <%= simple_format @entry.body %>
     </div>
   </div>
-  <div class="row">
+  <div class="row space-2x">
     <div class="col-xs-12">
       <% if not @entry.accomplishment.empty? %>
       <div class="row">
         <div class="col-xs-12">
-          <div class="alert alert-success" role="alert">
-            <strong>Oooh Yeah!</strong> Let's remember what you accomplished !
+          <div class="text-success">
+            <p class="lead"><strong>Oooh Yeah!</strong> Let's remember what you accomplished !</p>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <p class="lead"><%= @entry.accomplishment %></p>
+          <blockquote>
+            <p class="lead"><%= @entry.accomplishment %></p>
+          </blockquote>  
         </div>
       </div>
       <% end %>
