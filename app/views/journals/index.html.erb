@@ -22,7 +22,7 @@
           <tbody>
             <% @journals.each do |journal| %>
             <tr>
-              <td><%= link_to journal.title, journal %></td>
+              <td><%= link_to journal.title, journal_entries_path(journal) %></td>
               <td class="td-option"><%= link_to icon('eye'), journal %></td>
               <td class="td-option"><%= link_to icon('pencil-square-o'), edit_journal_path(journal) %></td>
               <td class="td-option"><%= link_to icon('trash-o'), journal,
