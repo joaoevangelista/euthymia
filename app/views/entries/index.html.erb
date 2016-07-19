@@ -7,6 +7,13 @@
 <% end %>
 <section class="container">
   <div class="row">
+    <div class="col-xs-12">
+      <div class="pull-xs-right">
+        <%= link_to 'New Entry', new_journal_entry_path(@journal), class: 'btn btn-sm btn-primary-outline' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-xs-12 col-md-10 col-md-offset-1">
       <% if @entries.empty? %>
       <p class="lead text-xs-center">
