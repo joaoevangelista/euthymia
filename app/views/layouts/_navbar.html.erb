@@ -13,6 +13,16 @@
     <div class="collapse navbar-toggleable-md" id="mainNavbarCollapse">
         <ul class="nav navbar-nav pull-lg-right">
             <% if user_signed_in? %>
+            <li><%= link_to 'Journals', journals_path, class: 'nav-link' %></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" id="add_dropdown" data-target="#" href="#" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-plus"></i><i class="fa fa-fw fa-angle-down"></i></a>
+              <ul class="dropdown-menu xs-dropdown" aria-labelledby="navbarDropdown1">
+                <li><%= link_to 'New Journal', new_journal_path, class: 'dropdown-item' %></li>
+                <li class="divider"></li>
+                <%= yield :create_entry %>
+              </ul>
+            </li>
             <%= render 'layouts/profile_menu' %>
             <% else %>
             <li>

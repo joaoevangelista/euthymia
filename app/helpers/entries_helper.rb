@@ -16,4 +16,8 @@ module EntriesHelper
       '<span class="heart"><i class="fa fa-3x fa-heart-o"></i></span>'.html_safe
     end
   end
+
+  def create_entry_nav_link(journal)
+    "<li>#{link_to 'New Entry', new_journal_path, class: 'dropdown-item'}</li>".html_safe
+  end
 end

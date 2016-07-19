@@ -1,7 +1,9 @@
 <% content_for :back_link do %>
 <%= back_link journal_entry_path(@journal, @entry) %>
 <% end %>
-
+<% content_for :create_entry do %>
+<%= create_entry_nav_link @journal %>
+<% end %>
 <section class="container">
   <div class="col-xs-12">
 
