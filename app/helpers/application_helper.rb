@@ -27,4 +27,8 @@ module ApplicationHelper
       "https://gravatar.com/avatar/#{hash}.png?s=#{size}"
     end
   end
+
+  def back_link(href)
+    link_to icon('angle-left','', class: 'fa-fw'), href, class: 'navbar-brand text-orange'
+  end
 end

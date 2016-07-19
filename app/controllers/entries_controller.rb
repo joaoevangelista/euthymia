@@ -7,7 +7,8 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all_by_user current_user
+    @journal = Journal.find_by_user(params[:journal_id], current_user)
+    @entries = Entry.all_by_user_and_journal current_user, @journal
   end
 
   # GET /entries/1

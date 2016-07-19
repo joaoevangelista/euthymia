@@ -3,10 +3,11 @@ $bgHighlight: #ffffff;
 $colDefault: #ff9068;
 $colHighlight: #fd746c;
 
-.navbar-light .navbar-nav .nav-link {
+.navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
   color: $colDefault;
 }
 
+.navbar-light .navbar-brand:hover,
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .open > .nav-link, .navbar-light .navbar-nav .open > .nav-link:focus,
 .navbar-light .navbar-nav .open > .nav-link:hover,
@@ -20,6 +21,10 @@ $colHighlight: #fd746c;
 .navbar-light .navbar-nav .nav-link.active:focus,
 .navbar-light .navbar-nav .nav-link.active:hover  {
   color: $colHighlight;
+}
+
+.navbar-light {
+  background-color: $nav-color;
 }
 
 @media (max-width: 62em) {
@@ -43,5 +48,19 @@ $colHighlight: #fd746c;
   .dropdown-menu {
     position: relative;
     float: none;
+  }
+
+  .xs-dropdown {
+    width: 100%;
+    background-color: $nav-color;
+    border: none;
+    color: $brand-orange;
+  }
+
+  .dropdown-item {
+    color: $brand-orange;
+  }
+  .dropdown-item:hover, .dropdown-item:active {
+    color: $brand-red;
   }
 }

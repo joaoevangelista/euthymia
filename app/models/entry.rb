@@ -6,9 +6,9 @@ class Entry < ApplicationRecord
   belongs_to :user
   belongs_to :journal
 
-  def self.all_by_user(user)
-    return [] unless user
-    Entry.where(user: user).order(updated_at: :desc)
+  def self.all_by_user_and_journal(user, journal)
+    return [] unless user or journal
+    Entry.where(user: user, journal: journal).order(updated_at: :desc)
   end
 
   def self.new_for_journal(journal, user = nil)
