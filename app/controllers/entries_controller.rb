@@ -7,7 +7,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    @entries = Entry.all_by_user current_user
   end
 
   # GET /entries/1
