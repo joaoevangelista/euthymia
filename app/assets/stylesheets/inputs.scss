@@ -46,7 +46,7 @@ input[type=checkbox].heart { display:none; } /* to hide the checkbox itself */
 input[type=checkbox].heart + label:before {
   cursor: pointer;
   font-size: 2rem;
-  color: #ff5555;
+  color: $brand-red;
   font-family: FontAwesome;
   display: inline-block;
 }
