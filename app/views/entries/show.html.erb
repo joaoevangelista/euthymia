@@ -1,34 +1,38 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @entry.user %>
-</p>
-
-<p>
-  <strong>Journal:</strong>
-  <%= @entry.journal %>
-</p>
-
-<p>
-  <strong>Favorite:</strong>
-  <%= @entry.favorite %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @entry.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @entry.body %>
-</p>
-
-<p>
-  <strong>Accomplishment:</strong>
-  <%= @entry.accomplishment %>
-</p>
-
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<section class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-xs-center"><%= @entry.title %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 text-xs-center">
+      <span class="text-muted">
+        Written at <%= created_time_of @entry %>
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= @entry.body %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <% if not @entry.accomplishment.empty? %>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="alert alert-success" role="alert">
+            <strong>Oooh Yeah!</strong> Let's remember what you accomplished !
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="lead"><%= @entry.accomplishment %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <%= render 'entries/emotions' %>
+</section>
