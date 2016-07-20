@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
   resources :journals do
-    resources :entries
+    resources :entries do
+      put :favorite, on: :member, action: :favorite
+      delete :favorite, on: :member, action: :unfavorite
+    end
   end
   get '/' => 'home#index', as: :root
 

@@ -2,7 +2,7 @@
 # :nodoc:
 class EntriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_entry, only: [:show, :edit, :update, :destroy]
+  before_action :set_entry, only: [:show, :edit, :update, :destroy, :favorite, :unfavorite]
 
   # GET /entries
   # GET /entries.json
@@ -54,6 +54,38 @@ class EntriesController < ApplicationController
         format.html do
           redirect_to [@entry.journal, @entry],
                       notice: 'Entry was successfully updated.'
+        end
+        format.json { render :show, status: :ok, location: [@entry.journal, @entry] }
+      else
+        format.html { render :edit }
+        format.json { render json: @entry.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /entries/1/favorite
+  def favorite
+    respond_to do |format|
+      if @entry.set_favorite
+        format.html do
+          redirect_to [@entry.journal, @entry],
+                      notice: 'Entry was successfully favorited.'
+        end
+        format.json { render :show, status: :ok, location: [@entry.journal, @entry] }
+      else
+        format.html { render :edit }
+        format.json { render json: @entry.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /entries/1/favorite
+  def unfavorite
+    respond_to do |format|
+      if @entry.unfavorite
+        format.html do
+          redirect_to [@entry.journal, @entry],
+                      notice: 'Entry was successfully unfavorited.'
         end
         format.json { render :show, status: :ok, location: [@entry.journal, @entry] }
       else

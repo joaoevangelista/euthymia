@@ -19,4 +19,12 @@ class Entry < ApplicationRecord
   def self.find_by_user(id, journal_id, user)
     Entry.find_by(id: id, journal_id: journal_id, user_id: user.id)
   end
+
+  def set_favorite
+    update(favorite: true)
+  end
+
+  def unfavorite
+    update(favorite: false)
+  end
 end
