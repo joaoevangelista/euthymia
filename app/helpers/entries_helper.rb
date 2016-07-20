@@ -13,14 +13,14 @@ module EntriesHelper
     if entry.favorite
       "<span class='heart'>
       #{link_to icon('heart', '', class: 'fa-2x'),
-      favorite_journal_entry_path(entry.journal, entry),
-      method: :delete, class: 'heart'}
+                favorite_journal_entry_path(entry.journal, entry),
+                method: :delete, class: 'heart'}
       </span>".html_safe
     else
       "<span class='heart'>
       #{link_to icon('heart-o', '', class: 'fa-2x'),
-      favorite_journal_entry_path(entry.journal, entry),
-      method: :put, class: 'heart'}
+                favorite_journal_entry_path(entry.journal, entry),
+                method: :put, class: 'heart'}
       </span>".html_safe
     end
   end
