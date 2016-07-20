@@ -5,6 +5,11 @@
 
 .heart {
   color: $brand-red;
+
+}
+
+.heart:hover, .heart:active {
+  color: $brand-orange;
 }
 
 .card {
