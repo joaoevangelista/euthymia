@@ -5,6 +5,8 @@ class Entry < ApplicationRecord
 
   belongs_to :user
   belongs_to :journal
+  has_many :sentiments
+  has_many :emotions
 
   after_save :perform_analysis
 
