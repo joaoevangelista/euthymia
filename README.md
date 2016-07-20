@@ -1,24 +1,37 @@
-# README
+# Euthymia
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+We want to help you to build a better community for living. By contributing on every aspect of your's. Discuss ideas, follow things as they happen and get notified about important announcements.
 
-Things you may want to cover:
+[![build status](https://gitlab.com/stronghold/stronghold/badges/master/build.svg)](https://gitlab.com/stronghold/stronghold/commits/master)
 
-* Ruby version
+## Development
 
-* System dependencies
+### Ruby version:
+`>= 2.2.5`
 
-* Configuration
+Be sure to install rails gem globally and have Devkit if needed for your platform.
 
-* Database creation
+### Configuration:
+  - Set `TEST_KEY` env var to generated string from `rake secret ` also set a `DEV_KEY` to another generated string from `rake secret ` so they can be used on secrets.yml without been shared.
 
-* Database initialization
 
-* How to run the test suite
+### Database creation
+On the first use set a `DATABASE_URL` with user password and database
+this uri will be used for development, on testing you need to set up
+an uri named `POSTGRES_TEST_URI` which will set the database to be the test one
 
-* Services (job queues, cache servers, search engines, etc.)
+To migrate the database run `rake db:migrate`.
 
-* Deployment instructions
+### Database initialization
+After migrating the database run `rake db:seed` if you want to have sample data to work with, especially an user.
 
-* ...
+### Test suite:
+Execute bundle with rspec `bundle exec rspec`, don't forget to check your style with `rubocop --auto-correct`.
+
+## Contributing
+
+All contributions are really apreciated, specially bug fixes and tests,
+if you are going to create a new feature, please first create an issue so we can
+discuss how to do it on a better way.
+
+For more information see our [Contributing guide](./CONTRIBUTING.md).
