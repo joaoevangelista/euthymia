@@ -8,7 +8,6 @@
    - lint
    - test
    - deploy
-   - registry
 
  cache:
   paths:
@@ -52,29 +51,29 @@
    tags:
    - docker
 
- deploy:image:
+ build:image:
    image: docker:git
+   stage: deploy
    services:
      - docker:dind
    script:
      - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
-     - docker build -t registry.gitlab.com/joaoevangelista/euthymia .
+     - docker build -t registry.gitlab.com/joaoevangelista/euthymia.
      - docker push registry.gitlab.com/joaoevangelista/euthymia:$CI_BUILD_TAG
    tags:
      - docker
    only:
      - tags
    when: on_success
- 
- deploy:heroku:production
-   type: deploy
-   environment: heroku:production
-   script:
-    - gem install dpl
-    - dpl --provider=heroku --app=euthymia --api-key=$HEROKU_PRODUCTION_API_KEY
-   tags:
-    - docker
-   only:
-    - tags
-   when: on_success
    
+ deploy:heroku:production:
+  type: deploy
+  stage: deploy
+  script:
+   - gem install dpl
+   - dpl --provider=heroku --app=euthymia --api-key=$HEROKU_PRODUCTION_API_KEY
+  tags:
+   - docker
+  only:
+   - tags
+  when: on_success
