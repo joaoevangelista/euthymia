@@ -6,19 +6,17 @@
   </a>
   <div class="collapse emotions_collpsable" id="emotions_percentages">
     <section class="space-2x">
-      <%= image_tag 'emotions/joy.svg', height: 35 %>
-      <span>Joy</span>
-      <progress class="space progress progress-striped progress-animated progress-success" value="60" max="100">60%</progress>
-      <%= image_tag 'emotions/surprise.svg', height: 35 %>
-      <span>Suprise</span>
-      <progress class="space progress progress-striped progress-animated progress-info" value="32" max="100">32%</progress>
-      <%= image_tag 'emotions/sad.svg', height: 35 %>
-      <span>Sadness</span>
-      <progress class="space progress progress-striped progress-animated progress-warning" value="20" max="100">20%</progress>
-      <%= image_tag 'emotions/anger.svg', height: 35 %>
-      <span>Anger</span>
-      <progress class="space progress progress-striped progress-animated progress-danger" value="10" max="100">10%</progress>
-    </section>
+      <% if recent_emotion %>
+        <%= joy recent_emotion.joy %>
+        <%= surprise recent_emotion.surprise %>
+        <%= sadness recent_emotion.sadness %>
+        <%= anger recent_emotion.anger %>
+        <%= fear recent_emotion.fear %>
+      <% else %>
+        <p class="lead text-xs-center">
+          Emotions results not ready yet.
+        </p>
+       <% end %>
   </div>
 </div>
 </div>

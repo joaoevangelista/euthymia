@@ -19,4 +19,13 @@
 .emotions_collpsable {
   border: 2px solid lighten($gray-light, 15%);
   padding: 0.25rem 1rem;
+  border-radius: 4px;
+}
+
+.progress-alternative[value]::-webkit-progress-value {
+  background-color: #9B59B6 !important;
+}
+
+.progress-alternative[value]::-moz-progress-value {
+  background-color: #9B59B6 !important;
 }
