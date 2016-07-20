@@ -5,11 +5,11 @@ class IndicoEmotionJob < ApplicationJob
 
   def perform(entry)
     emotions = Indico.emotion(entry.body)
-    Emotion.new(entry: entry, anger: emotions["anger"],
-                joy: emotions["joy"],
-                fear: emotions["fear"],
-                sadness: emotions["sadness"],
-                surprise: emotions["surprise"],
+    Emotion.new(entry: entry, anger: emotions['anger'],
+                joy: emotions['joy'],
+                fear: emotions['fear'],
+                sadness: emotions['sadness'],
+                surprise: emotions['surprise'],
                 user: entry.user).save!
   end
 end
