@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160718202929) do
+ActiveRecord::Schema.define(version: 20160720201832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "emotions", force: :cascade do |t|
+    t.integer  "entry_id"
+    t.float    "anger"
+    t.float    "joy"
+    t.float    "fear"
+    t.float    "sadness"
+    t.float    "surprise"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entry_id"], name: "index_emotions_on_entry_id", using: :btree
+  end
 
   create_table "entries", force: :cascade do |t|
     t.integer  "user_id"
@@ -36,6 +48,16 @@ ActiveRecord::Schema.define(version: 20160718202929) do
     t.index ["user_id"], name: "index_journals_on_user_id", using: :btree
   end
 
+  create_table "sentiments", force: :cascade do |t|
+    t.integer  "entry_id"
+    t.float    "positivity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["entry_id"], name: "index_sentiments_on_entry_id", using: :btree
+    t.index ["user_id"], name: "index_sentiments_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -54,7 +76,10 @@ ActiveRecord::Schema.define(version: 20160718202929) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "emotions", "entries"
   add_foreign_key "entries", "journals"
   add_foreign_key "entries", "users"
   add_foreign_key "journals", "users"
+  add_foreign_key "sentiments", "entries"
+  add_foreign_key "sentiments", "users"
 end

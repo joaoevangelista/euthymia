@@ -6,6 +6,8 @@ class Entry < ApplicationRecord
   belongs_to :user
   belongs_to :journal
 
+  after_save :perform_analysis
+
   def self.all_by_user_and_journal(user, journal)
     return [] unless user || journal
     Entry.where(user: user, journal: journal).order(updated_at: :desc)
@@ -26,5 +28,10 @@ class Entry < ApplicationRecord
 
   def unfavorite
     update(favorite: false)
+  end
+
+  def perform_analysis
+    IndicoEmotionJob.perform_later(self)
+    IndicoSentimentJob.perform_later(self)
   end
 end

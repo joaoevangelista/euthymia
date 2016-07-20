@@ -18,6 +18,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   def new
+    @journal = Journal.find_by_user(params[:journal_id], current_user)
     @entry = Entry.new_for_journal @journal, current_user
   end
 
