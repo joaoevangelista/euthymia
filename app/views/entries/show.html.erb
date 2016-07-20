@@ -2,7 +2,7 @@
 <%= back_link journal_entries_path(@entry.journal, @entry) %>
 <% end %>
 <% content_for :create_entry do %>
-<%= create_entry_nav_link @journal %>
+<%= create_entry_nav_link @entry.journal %>
 <% end %>
 <section class="container">
   <div class="row">
