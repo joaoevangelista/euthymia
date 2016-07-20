@@ -1,6 +1,6 @@
 .form-text {
-    padding: 1.2rem 1.2rem;
-    height: 55px;
+    padding: 1rem 1\rem;
+    height: 3.056rem;
     background: #f1f1f2;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -9,7 +9,7 @@
     -webkit-box-shadow: none;
     box-shadow: none;
     outline: 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #8a9199;
 }
 
@@ -35,8 +35,8 @@ textarea.form-text {
 }
 
 .input-lg {
-  padding: 0 45px;
-  height: 50px;
+  padding: 0 2.5rem;
+  height: 2.778rem;
   background: #fff;
   font-size: 2.3rem;
 }
@@ -76,4 +76,13 @@ input[type=checkbox].checkbox:checked + label:before { letter-spacing: 10px; } /
  // Zen Form
 .zen-forms .input {
   font-size: 1.1rem;
+}
+
+@media (max-width: 62em) {
+  .input-lg {
+    padding: 0;
+  }
+  input[type=checkbox].heart + label:before {
+    font-size: 1.5rem;
+  }
 }

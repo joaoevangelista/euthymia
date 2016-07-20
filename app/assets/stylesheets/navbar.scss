@@ -62,4 +62,8 @@ $colHighlight: #fd746c;
   .dropdown-item:hover, .dropdown-item:active {
     color: $brand-red;
   }
+  .navbar-toggler {
+    outline: none;
+    color: $brand-orange;
+  }
 }
