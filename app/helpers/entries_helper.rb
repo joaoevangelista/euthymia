@@ -16,5 +16,4 @@ module EntriesHelper
       '<span class="heart"><i class="fa fa-2x fa-heart-o"></i></span>'.html_safe
     end
   end
-
 end
