@@ -1,14 +1,15 @@
 # frozen_string_literal: true
+# :nodoc:
 class IndicoEmotionJob < ApplicationJob
   queue_as :default
 
   def perform(entry)
-    result = Indico.emotion(entry.body)
-    Emotion.new(entry: entry,anger: result.anger,
-                joy: result.joy,
-                fear: result.fear,
-                sadness: result.sadness,
-                surprise: result.surprise,
+    emotions = Indico.emotion(entry.body)
+    Emotion.new(entry: entry, anger: emotions.anger,
+                joy: emotions.joy,
+                fear: emotions.fear,
+                sadness: emotions.sadness,
+                surprise: emotions.surprise,
                 user: entry.user).save
   end
 end
