@@ -17,9 +17,4 @@ module EntriesHelper
     end
   end
 
-  def create_entry_nav_link(journal)
-    "<li>
-    #{link_to 'New Entry', new_journal_entry_path(journal), class: 'dropdown-item'}
-    </li>".html_safe
-  end
 end

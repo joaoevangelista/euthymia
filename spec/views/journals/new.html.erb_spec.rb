@@ -3,10 +3,8 @@ require 'rails_helper'
 
 RSpec.describe 'journals/new', type: :view do
   before(:each) do
-    assign(:journal, Journal.new(
-                       title: 'MyString',
-                       user: nil
-    ))
+    user = FactoryGirl.create(:user)
+    @journal = Journal.new_for_user user
   end
 
   it 'renders new journal form' do

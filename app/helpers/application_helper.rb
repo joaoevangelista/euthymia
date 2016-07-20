@@ -29,4 +29,10 @@ module ApplicationHelper
   def back_link(href)
     link_to icon('angle-left', '', class: 'fa-fw'), href, class: 'navbar-brand text-orange'
   end
+
+  def create_entry_nav_link(journal)
+    "<li>
+    #{link_to 'New Entry', new_journal_entry_path(journal), class: 'dropdown-item'}
+    </li>".html_safe
+  end
 end
