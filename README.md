@@ -1,6 +1,6 @@
 # Euthymia
 
-We want to help you to build a better community for living. By contributing on every aspect of your's. Discuss ideas, follow things as they happen and get notified about important announcements.
+***Because knowing your emotions matters***
 
 [![build status](https://gitlab.com/joaoevangelista/euthymia/badges/master/build.svg)](https://gitlab.com/joaoevangelista/euthymia/commits/master)
 
