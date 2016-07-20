@@ -15,6 +15,7 @@ class EntriesController < ApplicationController
   # GET /entries/1.json
   def show
     @emotion = Emotion.most_recent @entry, current_user
+    @sentiment = Sentiment.most_recent @entry, current_user
   end
 
   # GET /entries/new
