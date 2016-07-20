@@ -1,7 +1,7 @@
 <li class="nav-item dropdown">
   <a class="nav-link" id="navbarDropdown1" data-target="#" href="#" data-toggle="dropdown"
   aria-haspopup="true" aria-expanded="false"><%= current_user.name %>&nbsp;<i class="fa fa-fw fa-angle-down"></i></a>
-  <ul class="dropdown-menu xs-dropdown" aria-labelledby="navbarDropdown1">
+  <ul class="dropdown-menu dropdown-menu-right xs-dropdown" aria-labelledby="navbarDropdown1">
     <li><%= link_to icon('pencil', 'Edit account', class: 'fa-fw'), edit_user_registration_path(current_user), class: 'dropdown-item' %></li>
     <li class="divider"></li>
     <li><%= link_to(icon('sign-out', 'Sign out', class: 'fa-fw'), destroy_user_session_path, method: :delete, class: 'dropdown-item') %></li>
