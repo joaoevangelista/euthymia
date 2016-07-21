@@ -1,8 +1,33 @@
-<div class="container">
+<div class="container home">
   <div class="row">
-    <div class="col-xs-12">
-      <h1 class="text-xs-center text-orange">Welcome to Euthymia</h1>
-    </div>
+    <section class="col-xs-12 text-xs-center presentation">
+      <h1 class="text-xs-center">Euthymia</h1>
+      <%= image_tag 'angel.svg', class: 'text-xs-center space', height: 250 %>
+      <p class="text-xs-center lead text-muted space">Because knowing your emotions matters</p>
+    </section>
+    <hr>
+    <section class="description row clearfix">
+      <div class="col-xs-12 col-md-6  space-4x">
+        <p>
+          It's great to write about you, it increase your knowing about yourself.
+          But sometimes even we don't know, because of the mix of feelings we get.
+        </p>
+        <p>
+          Sometimes we just don't see where we are heading with our emotions.
+        </p>
+        <p class="space-2x text-xs-center">
+          <%= image_tag 'unicorn.svg', height: 100 %>
+        </p>
+        <p class="lead space-2x text-xs-center text-orange">We are here to help you!</p>
+      </div>
+      <div class="col-xs-12 col-md-6 get-started space-2x">
+        <div class="text-xs-center">
+          <h2 class="text-xs-center space-4x">Ready ?</h2>
+          <p class="text-xs-center space"><%= image_tag 'cool.svg', height: 70 %></p>
+          <%= link_to 'Get Started', new_user_registration_path, class: 'btn-lg btn-xs-block btn-orange btn space' %>
+        </div>
+      </div>
+    </section>
+
   </div>
-  <p class="lead text-xs-center text-red">Beacuse knowing your emotions matters</p>
 </div>
