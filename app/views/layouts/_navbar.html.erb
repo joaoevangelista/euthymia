@@ -25,10 +25,12 @@
             </li>
             <%= render 'layouts/profile_menu' %>
             <% else %>
-            <li>
+            <li class="nav-item">
               <%= link_to icon('sign-in', t('user.sign_in'), class: 'fa-fw'),
                new_user_session_path, class: 'nav-link' %>
             </li>
+            <li class="nav-item"><span class="nav-link">or</span></li>
+            <li class="nav-item"><%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %></li>
             <% end %>
         </ul>
     </div>
