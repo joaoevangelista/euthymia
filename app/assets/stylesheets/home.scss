@@ -18,5 +18,5 @@ $btn-txt-color: lighten($gray-lighter, 50%);
 }
 
 .features {
-  background-color: $gray-lighter;
+  background-color: lighten($gray-lighter, 4%);
 }
