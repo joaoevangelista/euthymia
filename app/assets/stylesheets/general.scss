@@ -66,3 +66,8 @@ section.container {
   font-weight: 700;
   font-size: 1.3rem;
 }
+
+blockquote {
+  border-left: 3px solid darken($nav-color, 10%);
+  padding-left: 0.8rem;
+}
