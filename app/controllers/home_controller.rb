@@ -2,8 +2,6 @@
 # :nodoc:
 class HomeController < ApplicationController
   def index
-    if current_user
-      redirect_to journals_path
-    end
+    redirect_to journals_path if current_user
   end
 end

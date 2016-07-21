@@ -25,6 +25,9 @@ To migrate the database run `rake db:migrate`.
 ### Database initialization
 After migrating the database run `rake db:seed` if you want to have sample data to work with, especially an user.
 
+### Redis
+ Euthymia makes use of Redis to store sessions, to use it, set the `REDIS_URL` environment variable to be the your redis url
+
 ### Test suite:
 Execute bundle with rspec `bundle exec rspec`, don't forget to check your style with `rubocop --auto-correct`.
 
