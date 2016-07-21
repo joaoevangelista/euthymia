@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # General text manipulation
 module TextHelper
   # Parse the input as Markdown using Redcarpet
