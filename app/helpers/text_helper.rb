@@ -8,4 +8,10 @@ module TextHelper
     markdown = Redcarpet::Markdown.new(renderer, autolink: true, tables: true)
     markdown.render text
   end
+
+  # Parse unicodes and names to images tags using gemojione gem
+  def emojione(text_input)
+    replaced_unicodes = Gemojione.replace_unicode_moji_with_images(text_input)
+    Gemojione.replace_named_moji_with_images(replaced_unicodes)
+  end
 end

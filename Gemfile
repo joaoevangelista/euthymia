@@ -31,9 +31,14 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'pundit'
 
+# Human Data Analysis
 gem 'indico'
-
+# Mardkown Parser
 gem 'redcarpet'
+# Emojione
+gem 'gemojione'
+# Dependency for performance of gemojione
+gem 'escape_utils'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
