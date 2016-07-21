@@ -15,13 +15,13 @@ module SentimentsHelper
     status = calc_sentiment sentiment
     if status.eql? :positive
       "<span>
-      #{image_tag 'sentiments/positive.svg', height: 45}
-      <small class='text-muted'>Positive</small>
+      #{image_tag 'sentiments/positive.svg', height: 55}
+      <p class='space text-emphasis'>Positive</p>
       </span>".html_safe
     else
       "<span>
-      #{image_tag 'sentiments/negative.svg', height: 45}
-      <small class='text-muted'>Negative</small>
+      #{image_tag 'sentiments/negative.svg', height: 55}
+      <p class='space text-emphasis'>Negative</p>
       </span>".html_safe
     end
   end

@@ -12,7 +12,7 @@
       </div>
       <div class="pull-xs-left">
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="options_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-secondary-outline dropdown-toggle" type="button" id="options_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span><i class="fa fa-fw fa-cog"></i></span>
           </button>
           <div class="dropdown-menu" aria-labelledby="options_menu">
@@ -61,5 +61,6 @@
       <% end %>
     </div>
   </div>
+  <%= render 'entries/sentiments', recent_sentiment: @sentiment %>
   <%= render 'entries/emotions', recent_emotion: @emotion %>
 </section>

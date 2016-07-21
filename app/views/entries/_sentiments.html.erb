@@ -1,0 +1,18 @@
+<div class="row space-2x">
+  <div class="col-xs-12">
+    <a class="btn btn-link btn-xs-block" href="#" data-toggle="collapse" data-target="#sentiments_percentages"
+    aria-expanded="false" aria-controls="sentiments_percentages">
+    <h4>Overall Sentiments <i class="fa fa-fw fa-angle-down"></i></h4>
+  </a>
+  <div class="collapse sentiments_collpsable" id="sentiments_percentages">
+    <section class="space-2x text-xs-center">
+      <% if recent_sentiment %>
+      <%= render_smile recent_sentiment %>
+      <% else %>
+      <p class="lead text-xs-center">
+        Sentiment results not ready yet.
+      </p>
+      <% end %>
+  </div>
+</div>
+</div>
