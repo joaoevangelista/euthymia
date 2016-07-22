@@ -35,4 +35,16 @@ module ApplicationHelper
     #{link_to 'New Entry', new_journal_entry_path(journal), class: 'dropdown-item'}
     </li>".html_safe
   end
+
+  def delete_link(text, href, options = {})
+    link_to text, href, method: :delete, data: {
+      confirm: "This can't ben undone !",
+      confirm_title: 'Are you sure ?',
+      confirm_fade: true,
+      confirm_cancel: 'Cancel',
+      confirm_proceed: 'Ok',
+      cancel_class: 'btn btn-secondary',
+      proceed_class: 'btn btn-orange'
+    }, class: options[:class]
+  end
 end
