@@ -84,3 +84,27 @@ blockquote {
 .general-text {
   font-family: 'Montserrat';
 }
+
+.delete-link:hover {
+  color: $brand-danger;
+}
+
+.edit-link:hover {
+  color: $brand-warning;
+}
+
+.show-link:hover {
+  color: $brand-info;
+}
+
+.btn-orange {
+  background-color: $brand-orange;
+  color: $btn-txt-color;
+}
+.btn-orange:hover {
+  background-color: $brand-red;
+  color: $btn-txt-color;
+}
+.btn.proceed {
+  padding: 0.375rem 1.5rem;
+}

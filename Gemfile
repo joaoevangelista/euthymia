@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'rails-assets-tether', '>= 1.1.0', source: 'https://rails-assets.org/'
 gem 'font-awesome-sass', '~> 4.6.2'
+# https://github.com/bluerail/twitter-bootstrap-rails-confirm
+gem 'twitter-bootstrap-rails-confirm'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

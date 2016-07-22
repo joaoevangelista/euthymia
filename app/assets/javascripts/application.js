@@ -16,4 +16,5 @@
 //= require bootstrap
 //= require zen-form
 //= require turbolinks
+//= require twitter/bootstrap/rails/confirm
 //= require_tree .

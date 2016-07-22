@@ -17,8 +17,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="options_menu">
             <%= link_to 'Edit', edit_journal_entry_path(@entry.journal, @entry), class: 'dropdown-item' %>
-            <%= link_to 'Delete', journal_entry_path(@entry.journal, @entry), class: 'dropdown-item',
-            method: :delete, data: {confirm: 'Are you sure ? This can not be undone!'} %>
+            <%= delete_link 'Delete', journal_entry_path(@entry.journal, @entry), class: 'dropdown-item' %>
           </div>
         </div>
       </div>
