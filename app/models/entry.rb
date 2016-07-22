@@ -1,14 +1,18 @@
 # frozen_string_literal: true
 # :nodoc:
 class Entry < ApplicationRecord
+
+  mount_uploader :entry_header, EntryHeaderUploader
+
   validates :title, :body, presence: true
 
   belongs_to :user
-  belongs_to :journal
+    belongs_to :journal
   has_many :sentiments, dependent: :delete_all
   has_many :emotions, dependent: :delete_all
 
   after_save :perform_analysis
+
 
   def self.all_by_user_and_journal(user, journal)
     return [] unless user || journal

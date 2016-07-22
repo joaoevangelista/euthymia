@@ -59,6 +59,13 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
+      <p class="text-xs-center">Want a header ?</p>
+      <%= f.hidden_field :entry_header_cache %>
+      <%= f.file_field :entry_header %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
       <div class="actions">
         <%= f.hidden_field :journal_id %>
         <%= f.hidden_field :user_id %>
