@@ -6,9 +6,9 @@ class EntryHeaderUploader < CarrierWave::Uploader::Base
   process convert: 'jpg'
   process tags: ['header_image']
 
-  version :standard do
-    process resize_to_fill: [100, 150, :north]
-  end
+  cloudinary_transformation transformation: [
+    width: 1366, height: 720 , crop: :scale
+  ]
 
   def extension_whitelist
     %w(jpg jpeg png)

@@ -4,12 +4,10 @@
 <% content_for :create_entry do %>
 <%= create_entry_nav_link @entry.journal %>
 <% end %>
+<% if @entry.entry_header_url %>
+<%= image_tag @entry.entry_header_url, class: 'img-fluid'%>
+<% end %>
 <section class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <%= image_tag @entry.entry_header_url %>
-    </div>
-  </div>
   <div class="row">
     <div class="col-xs-12">
       <div class="pull-xs-right">
