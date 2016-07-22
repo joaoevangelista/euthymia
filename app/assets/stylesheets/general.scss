@@ -1,5 +1,9 @@
-header {
+header + .container {
   margin-bottom: 40px;
+}
+
+header + img + .container {
+  margin-top: 5rem;
 }
 
 .space {
