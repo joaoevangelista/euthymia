@@ -7,7 +7,11 @@ class EntryHeaderUploader < CarrierWave::Uploader::Base
   process tags: ['header_image']
 
   version :standard do
-    process resize_to_fill: [100, 150, :north]          
+    process resize_to_fill: [100, 150, :north]
+  end
+
+  def extension_whitelist
+    %w(jpg jpeg png)
   end
 
 end
