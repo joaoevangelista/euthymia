@@ -43,8 +43,8 @@ module ApplicationHelper
       confirm_fade: true,
       confirm_cancel: 'Cancel',
       confirm_proceed: 'Ok',
-      cancel_class: 'btn btn-secondary',
-      proceed_class: 'btn btn-orange'
+      confirm_cancel_class: 'btn btn-secondary',
+      confirm_proceed_class: 'btn btn-orange'
     }, class: options[:class]
   end
 end
