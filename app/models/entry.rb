@@ -26,12 +26,16 @@ class Entry < ApplicationRecord
     Entry.find_by(id: id, journal_id: journal_id, user_id: user.id)
   end
 
+  # This method uses upddate_column instead of update
+  # to not trigger the callbacks causing a call to
+  # Indico API
   def set_favorite
-    update(favorite: true)
+    update_column(:favorite, true)
   end
 
+  # see #set_favorite
   def unfavorite
-    update(favorite: false)
+    update_column(:favorite, false)
   end
 
   def perform_analysis
