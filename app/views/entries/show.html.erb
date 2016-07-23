@@ -7,8 +7,9 @@
 <% end %>
 
 <% if @entry.entry_header_url %>
-<%= image_tag @entry.entry_header_url, class: 'img-fluid'%>
+  <div class="parallax-window" data-parallax="scroll" data-image-src="<%= @entry.entry_header_url%>"></div>
 <% end %>
+
 <section class="container">
   <div class="row">
     <div class="col-xs-12">

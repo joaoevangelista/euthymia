@@ -29,3 +29,12 @@
 .progress-alternative[value]::-moz-progress-value {
   background-color: #9B59B6 !important;
 }
+
+/* http://pixelcog.github.io/parallax.js/ */
+.parallax-window {
+  min-height: 30rem;
+  background: transparent;
+  display: block;
+  min-width: 100%;
+  height: auto;
+}

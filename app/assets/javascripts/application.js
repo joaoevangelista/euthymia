@@ -15,6 +15,7 @@
 //= require tether
 //= require bootstrap
 //= require zen-form
+//= require parallax
 //= require turbolinks
 //= require twitter/bootstrap/rails/confirm
 //= require_tree .
