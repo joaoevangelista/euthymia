@@ -44,6 +44,9 @@ gem 'redis-rails'
 # Cloudinary
 gem 'carrierwave'
 gem 'cloudinary'
+# Notifications
+gem 'exception_notification'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
