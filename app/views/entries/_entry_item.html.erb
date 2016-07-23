@@ -1,6 +1,8 @@
 <section class="card">
+  <% if entry.entry_header_url %>
   <%= cl_image_tag entry.entry_header.full_public_id,
-   width: 1000, height: 100, crop: :crop, style: 'max-width: 100%' %>
+  width: 1000, height: 100, crop: :crop, style: 'max-width: 100%' %>
+  <% end %>
   <div class="entry-item">
     <div class="row">
       <div class="col-xs-12">
