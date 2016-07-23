@@ -1,25 +1,19 @@
 <% content_for :back_link do %>
 <%= back_link journal_entries_path(@entry.journal, @entry) %>
 <% end %>
+
 <% content_for :create_entry do %>
 <%= create_entry_nav_link @entry.journal %>
+<% end %>
+
+<% if @entry.entry_header_url %>
+<%= image_tag @entry.entry_header_url, class: 'img-fluid'%>
 <% end %>
 <section class="container">
   <div class="row">
     <div class="col-xs-12">
       <div class="pull-xs-right">
         <%= favorite_button @entry %>
-      </div>
-      <div class="pull-xs-left">
-        <div class="dropdown">
-          <button class="btn btn-secondary-outline dropdown-toggle" type="button" id="options_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span><i class="fa fa-fw fa-cog"></i></span>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="options_menu">
-            <%= link_to 'Edit', edit_journal_entry_path(@entry.journal, @entry), class: 'dropdown-item' %>
-            <%= delete_link 'Delete', journal_entry_path(@entry.journal, @entry), class: 'dropdown-item' %>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -69,4 +63,17 @@
   </div>
   <%= render 'entries/sentiments', recent_sentiment: @sentiment %>
   <%= render 'entries/emotions', recent_emotion: @emotion %>
+  <div class="row">
+    <div class="col-xs-12 space-2x">
+      <div class="dropdown">
+        <button class="btn btn-secondary-outline btn-lg btn-xs-block dropdown-toggle" type="button" id="options_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span><i class="fa fa-fw fa-cog"></i></span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="options_menu">
+          <%= link_to 'Edit', edit_journal_entry_path(@entry.journal, @entry), class: 'dropdown-item' %>
+          <%= delete_link 'Delete', journal_entry_path(@entry.journal, @entry), class: 'dropdown-item' %>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

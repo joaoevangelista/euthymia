@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 # :nodoc:
 class Entry < ApplicationRecord
+  mount_uploader :entry_header, EntryHeaderUploader
+
   validates :title, :body, presence: true
 
   belongs_to :user

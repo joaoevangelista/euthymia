@@ -41,6 +41,10 @@ gem 'escape_utils'
 # Use Redis Store to cache and session storage
 gem 'redis-rails'
 
+# Cloudinary
+gem 'carrierwave'
+gem 'cloudinary'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

@@ -119,6 +119,7 @@ class EntriesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def entry_params
     params.require(:entry).permit(:user_id, :journal_id, :favorite,
-                                  :title, :body, :accomplishment)
+                                  :title, :body, :accomplishment,
+                                  :entry_header_cache, :entry_header)
   end
 end
