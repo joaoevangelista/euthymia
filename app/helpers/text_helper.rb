@@ -22,7 +22,7 @@ module TextHelper
   def gemojione_android_support(string)
     return string unless string
     unless string.match(Gemojione.index.unicode_moji_regex)
-      return safe_string(string)
+      return Gemojione.safe_string(string)
     end
 
     safe_string = Gemojione.safe_string(string.dup)
