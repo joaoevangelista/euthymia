@@ -8,7 +8,8 @@
   <div class="row">
     <div class="col-xs-12">
       <h1 class="text-xs-center">
-        Details of <%= @journal.title %>
+        Details of
+        <%= @journal.title %>
       </h1>
     </div>
   </div>
@@ -25,16 +26,23 @@
   <div class="row space-3x">
     <div class="col-xs-12">
       <p class="lead">
-        <span class="text-warning"><i class="fa fa-fw fa-clock-o"></i></span>
-        Last time updated was at: <%= update_time_of @journal %>
+        <span class="text-warning">
+          <i class="fa fa-fw fa-clock-o"></i>
+        </span>
+        Last time updated was at:
+        <%= update_time_of @journal %>
       </p>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
       <p class="lead">
-        <span class="text-success"><i class="fa fa-fw fa-check"></i></span>
-        You have <%= @journal.entries.count %> entries in this journal
+        <span class="text-success">
+          <i class="fa fa-fw fa-check"></i>
+        </span>
+        You have
+        <%= @journal.entries.count %>
+        entries in this journal
       </p>
     </div>
   </div>
@@ -64,13 +72,6 @@
           <hr>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="row space-3x">
-    <div class="col-xs-12">
-      <h1 class="text-md-left text-xs-center">
-        You have written <b>563</b> words!
-      </h1>
     </div>
   </div>
 </section>
