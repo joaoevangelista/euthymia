@@ -2,7 +2,7 @@
 # :nodoc:
 class Entry < ApplicationRecord
   include PgSearch
-  pg_search_scope :search_by, against: [:body, :user]
+  pg_search_scope :search_by_body, against: [:body, :user_id]
 
   mount_uploader :entry_header, EntryHeaderUploader
 

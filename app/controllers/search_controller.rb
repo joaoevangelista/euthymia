@@ -2,7 +2,7 @@ class SearchController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @query = sanitize(params[:q] || '')
-    @results = Entry.search_by(body: @query, user: current_user)
+    query = params[:q] || ''
+    @results = Entry.search_by_body(body: query, user_id: current_user.id)
   end
 end
