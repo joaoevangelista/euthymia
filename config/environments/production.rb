@@ -66,16 +66,15 @@ Rails.application.configure do
   # raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
-
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'sendgrid.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    domain: 'sendgrid.com',
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
@@ -103,10 +102,10 @@ Rails.application.configure do
 
   # Exception Notifier Middleware
   config.middleware.use ExceptionNotification::Rack,
-  email: {
-    deliver_with: :deliver,
-    email_prefix: "[Euthymia Rails]",
-    sender_address: %{"notifier" <notifier@euthymia.space>},
-    exception_recipients: %w{services.euthymia@gmail.com}
-  }
+                        email: {
+                          deliver_with: :deliver,
+                          email_prefix: '[Euthymia Rails]',
+                          sender_address: %("notifier" <notifier@euthymia.space>),
+                          exception_recipients: %w(services.euthymia@gmail.com)
+                        }
 end
