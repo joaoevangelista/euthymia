@@ -14,8 +14,6 @@ ActiveRecord::Schema.define(version: 20160724013707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "pg_trgm"
-  enable_extension "fuzzystrmatch"
 
   create_table "emotions", force: :cascade do |t|
     t.integer  "entry_id"

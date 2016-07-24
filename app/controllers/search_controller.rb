@@ -1,8 +1,9 @@
+# frozen_string_literal: true
 class SearchController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    query = params[:q] || ''
-    @results = Entry.search_by_body(body: query, user_id: current_user.id)
+    query = params[:q].parameterize || ''
+    @results = Entry.search query, current_user
   end
 end

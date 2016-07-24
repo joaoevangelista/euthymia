@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 # :nodoc:
 class Entry < ApplicationRecord
-  include PgSearch
-  pg_search_scope :search_by_body, against: [:body, :user_id]
-
   mount_uploader :entry_header, EntryHeaderUploader
 
   validates :title, :body, presence: true
@@ -27,6 +24,12 @@ class Entry < ApplicationRecord
 
   def self.find_by_user(id, journal_id, user)
     Entry.find_by(id: id, journal_id: journal_id, user_id: user.id)
+  end
+
+  # Search against the bodies of entries matching the query and owner
+  # NOTE: query must be parameterized or sanitized to be used
+  def self.search(query, user)
+    Entry.where('body like = ?', "%#{query}%").where(user: user)
   end
 
   # This method uses upddate_column instead of update
