@@ -5,13 +5,12 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 space-2x">
       <% if @results.empty? %>
       <p class="text-xs-center">
         <img src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.6/assets/svg/1f615.svg"
          alt="confused" height="80" class="text-xs-center"/>
       </p>
-
       <p class="text-xs-center">No results where found</p>
     <% else %>
       <% @results.each do |entry|  %>
