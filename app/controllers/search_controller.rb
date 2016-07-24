@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# Controller for search operations
 class SearchController < ApplicationController
   before_action :authenticate_user!
 
