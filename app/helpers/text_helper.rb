@@ -34,5 +34,4 @@ module TextHelper
 
     safe_string
   end
-
 end
