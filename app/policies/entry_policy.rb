@@ -4,4 +4,12 @@ class EntryPolicy < ApplicationPolicy
   def index?
     @user
   end
+
+  def favorite?
+    update?
+  end
+
+  def unfavorite?
+    update?
+  end
 end
