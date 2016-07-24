@@ -26,6 +26,12 @@ class Entry < ApplicationRecord
     Entry.find_by(id: id, journal_id: journal_id, user_id: user.id)
   end
 
+  # Search against the bodies of entries matching the query and owner
+  # NOTE: query must be parameterized or sanitized to be used
+  def self.search(query, user)
+    Entry.where('body like ?', "%#{query}%").where(user: user)
+  end
+
   # This method uses upddate_column instead of update
   # to not trigger the callbacks causing a call to
   # Indico API
