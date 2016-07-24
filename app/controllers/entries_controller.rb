@@ -7,32 +7,37 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
+    authorize Entry
     @journal = Journal.find_by_user(params[:journal_id], current_user)
+    authorize @journal
     @entries = Entry.all_by_user_and_journal current_user, @journal
   end
 
   # GET /entries/1
   # GET /entries/1.json
   def show
+    authorize @entry
     @emotion = Emotion.most_recent @entry, current_user
     @sentiment = Sentiment.most_recent @entry, current_user
   end
 
   # GET /entries/new
   def new
+    authorize @journal
     @journal = Journal.find_by_user(params[:journal_id], current_user)
     @entry = Entry.new_for_journal @journal, current_user
   end
 
   # GET /entries/1/edit
   def edit
+    authorize @entry
   end
 
   # POST /entries
   # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
-
+    authorize @entry
     respond_to do |format|
       if @entry.save
         format.html do
@@ -50,6 +55,7 @@ class EntriesController < ApplicationController
   # PATCH/PUT /entries/1
   # PATCH/PUT /entries/1.json
   def update
+    authorize @entry
     respond_to do |format|
       if @entry.update(entry_params)
         format.html do
@@ -66,6 +72,7 @@ class EntriesController < ApplicationController
 
   # PUT /entries/1/favorite
   def favorite
+    authorize @entry
     respond_to do |format|
       if @entry.set_favorite
         format.html do
@@ -82,6 +89,7 @@ class EntriesController < ApplicationController
 
   # DELETE /entries/1/favorite
   def unfavorite
+    authorize @entry
     respond_to do |format|
       if @entry.unfavorite
         format.html do
@@ -99,6 +107,7 @@ class EntriesController < ApplicationController
   # DELETE /entries/1
   # DELETE /entries/1.json
   def destroy
+    authorize @entry
     @entry.destroy
     respond_to do |format|
       format.html do
