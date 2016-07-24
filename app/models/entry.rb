@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 # :nodoc:
 class Entry < ApplicationRecord
+  include PgSearch
+  
   mount_uploader :entry_header, EntryHeaderUploader
 
   validates :title, :body, presence: true
