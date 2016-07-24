@@ -3,7 +3,7 @@ class SearchController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    query = params[:q].parameterize || ''
-    @results = Entry.search query, current_user
+    query = params[:q] || ''
+    @results = Entry.search query.parameterize, current_user
   end
 end

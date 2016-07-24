@@ -29,7 +29,7 @@ class Entry < ApplicationRecord
   # Search against the bodies of entries matching the query and owner
   # NOTE: query must be parameterized or sanitized to be used
   def self.search(query, user)
-    Entry.where('body like = ?', "%#{query}%").where(user: user)
+    Entry.where('body like ?', "%#{query}%").where(user: user)
   end
 
   # This method uses upddate_column instead of update
