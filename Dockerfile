@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -qq -y build-essential nodejs libpq-dev \
 ENV RAILS_PORT 3000
 ENV PORT 80
 ENV RAILS_ENV production
-ENV INSTALL_DIR /stronghold
+ENV INSTALL_DIR /euthymia
 
 # Install and configure nginx
 RUN apt-get install -y nginx
@@ -25,7 +25,7 @@ RUN gem install bundler rake foreman && bundle install --without development tes
 
 # Copy in the application code from your work station at the current directory
 # over to the working directory.
-COPY . .
+ADD . .
 
 # Provide dummy data to Rails so it can pre-compile assets.
 RUN bundle exec rake RAILS_ENV=production DATABASE_URL=postgresql://user:pass@127.0.0.1/dbname SECRET_KEY_BASE=pickasecuretoken assets:precompile
