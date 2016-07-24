@@ -46,31 +46,21 @@
       </p>
     </div>
   </div>
-  <!-- todo add lenght of the all words in journal -->
-  <!-- todo add avg percentage of emotions on this journal -->
-  <!--  Stub -->
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 space-2x">
       <div class="row">
         <div class="col-xs-12">
-          <h3 class="text-xs-center">Most likely emotions</h3>
+          <h3 class="text-xs-center">Average emotions</h3>
           <hr>
         </div>
       </div>
       <div class="row space">
         <div class="col-xs-12">
-          <%= image_tag 'emotions/joy.svg', height: 35 %>
-          <span>Joy</span>
-          <progress class="space progress progress-striped progress-animated progress-success" value="60" max="100">60%</progress>
-          <%= image_tag 'emotions/surprise.svg', height: 35 %>
-          <span>Suprise</span>
-          <progress class="space progress progress-striped progress-animated progress-info" value="32" max="100">32%</progress>
-          <%= image_tag 'emotions/sad.svg', height: 35 %>
-          <span>Sadness</span>
-          <progress class="space progress progress-striped progress-animated progress-warning" value="20" max="100">20%</progress>
-          <%= image_tag 'emotions/anger.svg', height: 35 %>
-          <span>Anger</span>
-          <progress class="space progress progress-striped progress-animated progress-danger" value="10" max="100">10%</progress>
+          <%= joy @avg_emotions['joy'].to_i %>
+          <%= surprise @avg_emotions['surprise'].to_i %>
+          <%= sadness @avg_emotions['sadness'].to_i %>
+          <%= anger @avg_emotions['anger'].to_i %>
+          <%= fear @avg_emotions['fear'].to_i %>
           <hr>
         </div>
       </div>
