@@ -7,28 +7,32 @@ class JournalsController < ApplicationController
   # GET /journals
   # GET /journals.json
   def index
+    authorize Journal
     @journals = Journal.all_by_user current_user
   end
 
   # GET /journals/1
   # GET /journals/1.json
   def show
+    authorize @journal
   end
 
   # GET /journals/new
   def new
+    authorize Journal
     @journal = Journal.new_for_user current_user
   end
 
   # GET /journals/1/edit
   def edit
+    authorize @journal
   end
 
   # POST /journals
   # POST /journals.json
   def create
     @journal = Journal.new(journal_params)
-
+    authorize @journal
     respond_to do |format|
       if @journal.save
         format.html do
@@ -46,6 +50,7 @@ class JournalsController < ApplicationController
   # PATCH/PUT /journals/1
   # PATCH/PUT /journals/1.json
   def update
+    authorize @journal
     respond_to do |format|
       if @journal.update(journal_params)
         format.html { redirect_to @journal, notice: 'Journal was successfully updated.' }
