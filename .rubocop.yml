@@ -30,3 +30,5 @@ RSpec/VerifiedDoubles:
    Enabled: false
 Metrics/ClassLength:
   Max: 150
+Metrics/CyclomaticComplexity:
+  Max: 8
