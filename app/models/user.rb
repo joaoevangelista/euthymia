@@ -10,11 +10,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  has_many :journals
-  has_many :entries
-  has_many :sentiments
-  has_many :emotions
-  has_many :identities
+  has_many :journals, dependent: :delete_all
+  has_many :entries, dependent: :delete_all
+  has_many :sentiments, dependent: :delete_all
+  has_many :emotions, dependent: :delete_all
+  has_many :identities, dependent: :delete_all
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
     identity = Identity.find_for_oauth(auth)
