@@ -26,13 +26,13 @@ class Journal < ApplicationRecord
 
   def avg_emotions
     cached_emotions = emotions
-    # joins(:entry).joins(:journal).where(journal: journal)
+    size = cached_emotions.size
     {
-      joy: cached_emotions.sum(&:joy).to_f,
-      sadness: cached_emotions.sum(&:sadness).to_f,
-      surprise: cached_emotions.sum(&:surprise).to_f,
-      anger: cached_emotions.sum(&:anger).to_f,
-      fear: cached_emotions.sum(&:fear).to_f
+      joy: cached_emotions.sum(&:joy).to_f / size,
+      sadness: cached_emotions.sum(&:sadness).to_f / size,
+      surprise: cached_emotions.sum(&:surprise).to_f / size,
+      anger: cached_emotions.sum(&:anger).to_f / size,
+      fear: cached_emotions.sum(&:fear).to_f / size
     }
   end
 end
