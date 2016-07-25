@@ -28,11 +28,11 @@ class Journal < ApplicationRecord
     cached_emotions = emotions
     # joins(:entry).joins(:journal).where(journal: journal)
     {
-      joy: cached_emotions.sum(&:joy),
-      sadness: cached_emotions.sum(&:sadness),
-      surprise: cached_emotions.sum(&:surprise),
-      anger: cached_emotions.sum(&:anger),
-      fear: cached_emotions.sum(&:fear)
+      joy: cached_emotions.sum(&:joy).to_f,
+      sadness: cached_emotions.sum(&:sadness).to_f,
+      surprise: cached_emotions.sum(&:surprise).to_f,
+      anger: cached_emotions.sum(&:anger).to_f,
+      fear: cached_emotions.sum(&:fear).to_f
     }
   end
 end
