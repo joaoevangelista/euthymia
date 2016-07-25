@@ -41,18 +41,18 @@ class User < ApplicationRecord
     identity.user = user
     identity.save!
   end
-end
 
-def create_user_if_new(user, auth, email)
-  if user.nil?
-    user = User.new(
-      name: auth.extra.raw_info.name,
-      email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-      password: Devise.friendly_token[0, 20]
-    )
+  def create_user_if_new(user, auth, email)
+    if user.nil?
+      user = User.new(
+        name: auth.extra.raw_info.name,
+        email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
+        password: Devise.friendly_token[0, 20]
+      )
 
-    # check if confirmable is enabled
-    user.skip_confirmation! if user.respond_to?(:skip_confirmation)
-    user.save!
+      # check if confirmable is enabled
+      user.skip_confirmation! if user.respond_to?(:skip_confirmation)
+      user.save!
+    end
   end
 end
