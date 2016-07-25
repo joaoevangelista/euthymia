@@ -10,10 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724013707) do
+ActiveRecord::Schema.define(version: 20160725123320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_trgm"
+  enable_extension "fuzzystrmatch"
 
   create_table "emotions", force: :cascade do |t|
     t.integer  "entry_id"
@@ -41,6 +43,15 @@ ActiveRecord::Schema.define(version: 20160724013707) do
     t.string   "entry_header"
     t.index ["journal_id"], name: "index_entries_on_journal_id", using: :btree
     t.index ["user_id"], name: "index_entries_on_user_id", using: :btree
+  end
+
+  create_table "indentities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_indentities_on_user_id", using: :btree
   end
 
   create_table "journals", force: :cascade do |t|
@@ -83,6 +94,7 @@ ActiveRecord::Schema.define(version: 20160724013707) do
   add_foreign_key "emotions", "users"
   add_foreign_key "entries", "journals"
   add_foreign_key "entries", "users"
+  add_foreign_key "indentities", "users"
   add_foreign_key "journals", "users"
   add_foreign_key "sentiments", "entries"
   add_foreign_key "sentiments", "users"

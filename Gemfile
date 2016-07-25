@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Authentication
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 # Authorization
 gem 'pundit'
