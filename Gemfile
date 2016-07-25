@@ -31,8 +31,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
-gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 
 # Authorization
 gem 'pundit'
