@@ -4,8 +4,8 @@
     class: 'btn btn-lg btn-xs-block btn-twitter' %>
   </div>
   <div class="col-xs-12 col-md-4">
-    <%= link_to mdi('github-circle', 'Sign In with GitHub'), omniauth_authorize_path(resource_name, :github),
-    class: 'btn btn-lg btn-xs-block btn-github space-xs' %>
+    <%= link_to mdi('facebook', 'Sign In with Facebook'), omniauth_authorize_path(resource_name, :facebook),
+    class: 'btn btn-lg btn-xs-block btn-facebook space-xs' %>
   </div>
   <div class="col-xs-12 col-md-4">
     <%= link_to mdi('google', 'Sign In with Google'), omniauth_authorize_path(resource_name, :google_oauth2),
