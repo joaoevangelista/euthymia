@@ -2,11 +2,8 @@
 <!-- .navbar -->
 <nav class="navbar navbar-full navbar-light bg-light">
     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">
-    &#9776;
+    <i class="mdi mdi-menu"></i>
     </button>
-    <!-- <a class="navbar-brand" href="/">
-      <span class="text-orange"><i class="fa fa-fw fa-angle-left"></i>Back</span>
-    </a> -->
     <div class="hidden-md-down">
     <%= yield :back_link %>
     </div>
@@ -14,10 +11,10 @@
         <ul class="nav navbar-nav pull-lg-right">
             <% if user_signed_in? %>
             <li class="nav-item"><%= render 'layouts/search_form' %></li>
-            <li class="nav-item"><%= link_to "<i class='zmdi zmdi-book'></i>  Journals".html_safe, journals_path, class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to "<i class='mdi mdi-book'></i>  Journals".html_safe, journals_path, class: 'nav-link' %></li>
             <li class="nav-item dropdown">
               <a class="nav-link" id="add_dropdown" data-target="#" href="#" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-plus zmdi-hc-fw"></i><i class="fa fa-fw fa-angle-down"></i></a>
+              aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-plus zmdi-hc-fw"></i><i class="fa fa-fw fa-angle-down"></i></a>
               <ul class="dropdown-menu xs-dropdown" aria-labelledby="navbarDropdown1">
                 <li><%= link_to 'New Journal', new_journal_path, class: 'dropdown-item' %></li>
                 <li class="divider"></li>
