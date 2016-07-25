@@ -1,0 +1,36 @@
+$twitter: #00aced;
+$google: #dd4b39;
+$github: #333;
+
+.btn-twitter {
+  background-color: $twitter ;
+  color: white;
+  border-color: white;
+}
+.btn-twitter:hover {
+  background-color: white ;
+  color: $twitter;
+  border-color: $twitter;
+}
+
+.btn-google {
+  background-color: $google ;
+  color: white;
+  border-color: white;
+}
+.btn-google:hover {
+  background-color: white ;
+  color: $google;
+  border-color: $google;
+}
+
+.btn-github {
+  background-color: $github ;
+  color: white;
+  border-color: white;
+}
+.btn-github:hover {
+  background-color: white ;
+  color: $github;
+  border-color: $github;
+}

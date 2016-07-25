@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-12 col-md-4">
+    <%= link_to mdi('twitter', 'Sign In with Twitter'), omniauth_authorize_path(resource_name, :twitter),
+    class: 'btn btn-lg btn-xs-block btn-twitter' %>
+  </div>
+  <div class="col-xs-12 col-md-4">
+    <%= link_to mdi('github-circle', 'Sign In with GitHub'), omniauth_authorize_path(resource_name, :github),
+    class: 'btn btn-lg btn-xs-block btn-github' %>
+  </div>
+  <div class="col-xs-12 col-md-4">
+    <%= link_to mdi('google', 'Sign In with Google'), omniauth_authorize_path(resource_name, :google_oauth2),
+    class: 'btn btn-lg btn-xs-block btn-google' %>
+  </div>
+</div>
