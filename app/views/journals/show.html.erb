@@ -17,7 +17,7 @@
     <div class="col-xs-12">
       <div class="pull-md-right text-xs-center">
         <small>
-          <%= link_to icon('pencil', 'Edit', class: 'fa-fw'), edit_journal_path(@journal),
+          <%= link_to mdi('pencil', 'Edit', class: 'mdi-half'), edit_journal_path(@journal),
           class: '' %>
         </small>
       </div>
@@ -27,7 +27,7 @@
     <div class="col-xs-12">
       <p class="lead">
         <span class="text-warning">
-          <i class="fa fa-fw fa-clock-o"></i>
+          <%= mdi('clock') %>
         </span>
         Last time updated was at:
         <%= update_time_of @journal %>
@@ -38,7 +38,7 @@
     <div class="col-xs-12">
       <p class="lead">
         <span class="text-success">
-          <i class="fa fa-fw fa-check"></i>
+          <%= mdi 'check' %>
         </span>
         You have
         <%= @journal.entries.count %>
@@ -49,7 +49,7 @@
   <div class="row">
     <div class="col-xs-12">
       <p class="lead">
-        <%= link_to icon('file-text-o', 'See the entries', class: 'fa-fw text-info'), journal_entries_path(@journal) %>
+        <%= link_to mdi('file-multiple', 'See the entries', class: 'text-info'), journal_entries_path(@journal) %>
         <%= link_to 'or write a new entry here', new_journal_entry_path(@journal) %>
       </p>
     </div>

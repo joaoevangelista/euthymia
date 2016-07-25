@@ -27,7 +27,7 @@ module ApplicationHelper
   end
 
   def back_link(href)
-    link_to icon('angle-left', '', class: 'fa-fw'), href, class: 'navbar-brand text-orange'
+    link_to mdi('chevron-left'), href, class: 'navbar-brand text-orange'
   end
 
   def create_entry_nav_link(journal)
@@ -46,5 +46,13 @@ module ApplicationHelper
       confirm_cancel_class: 'btn btn-secondary',
       confirm_proceed_class: 'btn btn-orange'
     }, class: options[:class]
+  end
+
+  def mdi(name, text = '', options = {})
+    "<i class='mdi mdi-#{name} #{options[:class]}'></i> #{text}".html_safe
+  end
+
+  def mdi_on_end(name, text = '', options = {})
+    "#{text} <i class='mdi mdi-#{name} #{options[:class]}'></i>".html_safe
   end
 end

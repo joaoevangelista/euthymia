@@ -3,10 +3,10 @@
   aria-haspopup="true" aria-expanded="false">
   <%= image_tag gravatar(current_user.email), height: 25, class: 'img-circle' %>&nbsp;
   <%= current_user.name %>&nbsp;
-  <i class="fa fa-fw fa-angle-down"></i></a>
+  <%= mdi('chevron-down') %></a>
   <ul class="dropdown-menu dropdown-menu-right xs-dropdown" aria-labelledby="navbarDropdown1">
-    <li><%= link_to icon('pencil', 'Edit account', class: 'fa-fw'), edit_user_registration_path(current_user), class: 'dropdown-item' %></li>
+    <li><%= link_to mdi('pencil', 'Edit account'), edit_user_registration_path(current_user), class: 'dropdown-item' %></li>
     <li class="divider"></li>
-    <li><%= link_to(icon('sign-out', 'Sign out', class: 'fa-fw'), destroy_user_session_path, method: :delete, class: 'dropdown-item') %></li>
+    <li><%= link_to(mdi('logout-variant', 'Sign out'), destroy_user_session_path, method: :delete, class: 'dropdown-item') %></li>
   </ul>
 </li>

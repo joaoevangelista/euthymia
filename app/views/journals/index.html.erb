@@ -23,10 +23,10 @@
             <% @journals.each do |journal| %>
             <tr>
               <td><%= link_to journal.title, journal_entries_path(journal) %></td>
-              <td class="td-option"><%= link_to icon('eye'), journal, class: 'show-link' %></td>
-              <td class="td-option"><%= link_to icon('pencil-square-o'), edit_journal_path(journal),
+              <td class="td-option"><%= link_to mdi('eye'), journal, class: 'show-link' %></td>
+              <td class="td-option"><%= link_to mdi('pencil-box-outline'), edit_journal_path(journal),
                class: 'edit-link' %></td>
-              <td class="td-option"><%= delete_link icon('trash-o'), journal, class: 'delete-link' %></td>
+              <td class="td-option"><%= delete_link mdi('delete-variant'), journal, class: 'delete-link' %></td>
             </tr>
             <% end %>
           </tbody>

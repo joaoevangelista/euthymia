@@ -11,7 +11,7 @@
         <ul class="nav navbar-nav pull-lg-right">
             <% if user_signed_in? %>
             <li class="nav-item"><%= render 'layouts/search_form' %></li>
-            <li class="nav-item"><%= link_to "<i class='mdi mdi-book'></i>  Journals".html_safe, journals_path, class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to mdi('book', 'Journals'), journals_path, class: 'nav-link' %></li>
             <li class="nav-item dropdown">
               <a class="nav-link" id="add_dropdown" data-target="#" href="#" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-plus zmdi-hc-fw"></i><i class="fa fa-fw fa-angle-down"></i></a>
@@ -24,7 +24,7 @@
             <%= render 'layouts/profile_menu' %>
             <% else %>
             <li class="nav-item">
-              <%= link_to icon('sign-in', t('user.sign_in'), class: 'fa-fw'),
+              <%= link_to mdi('login-variant', 'Sign In'),
                new_user_session_path, class: 'nav-link' %>
             </li>
             <li class="nav-item"><span class="nav-link">or</span></li>
