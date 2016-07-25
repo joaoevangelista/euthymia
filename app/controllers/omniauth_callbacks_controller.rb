@@ -20,6 +20,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   alias twitter provider
   alias github provider
+  alias google_oauth2 provider
 
   def after_sign_in_path_for(resource)
     if resource.email_verified?

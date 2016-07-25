@@ -32,6 +32,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
 
 # Authorization
 gem 'pundit'
