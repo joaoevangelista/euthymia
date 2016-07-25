@@ -1,6 +1,7 @@
 $twitter: #00aced;
 $google: #dd4b39;
 $github: #333;
+$facebook: #3b5998;
 
 .btn-twitter {
   background-color: $twitter ;
@@ -33,4 +34,16 @@ $github: #333;
   background-color: white ;
   color: $github;
   border-color: $github;
+}
+
+
+.btn-facebook {
+  background-color: $facebook ;
+  color: white;
+  border-color: white;
+}
+.btn-facebook:hover {
+  background-color: white ;
+  color: $facebook;
+  border-color: $facebook;
 }
