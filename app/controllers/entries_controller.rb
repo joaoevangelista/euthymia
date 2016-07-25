@@ -42,7 +42,7 @@ class EntriesController < ApplicationController
       if @entry.save
         format.html do
           redirect_to [@entry.journal, @entry],
-          notice: 'Entry was successfully created.'
+                      notice: 'Entry was successfully created.'
         end
         format.json { render :show, status: :created, location: [@entry.journal, @entry] }
       else
@@ -60,7 +60,7 @@ class EntriesController < ApplicationController
       if @entry.update(entry_params)
         format.html do
           redirect_to [@entry.journal, @entry],
-          notice: 'Entry was successfully updated.'
+                      notice: 'Entry was successfully updated.'
         end
         format.json { render :show, status: :ok, location: [@entry.journal, @entry] }
       else
@@ -77,7 +77,7 @@ class EntriesController < ApplicationController
       if @entry.set_favorite
         format.html do
           redirect_to [@entry.journal, @entry],
-          notice: 'Entry was successfully favorited.'
+                      notice: 'Entry was successfully favorited.'
         end
         format.json { render :show, status: :ok, location: [@entry.journal, @entry] }
       else
@@ -94,7 +94,7 @@ class EntriesController < ApplicationController
       if @entry.unfavorite
         format.html do
           redirect_to [@entry.journal, @entry],
-          notice: 'Entry was successfully unfavorited.'
+                      notice: 'Entry was successfully unfavorited.'
         end
         format.json { render :show, status: :ok, location: [@entry.journal, @entry] }
       else
@@ -112,7 +112,7 @@ class EntriesController < ApplicationController
     respond_to do |format|
       format.html do
         redirect_to journal_entries_path(@entry.journal),
-        notice: 'Entry was successfully destroyed.'
+                    notice: 'Entry was successfully destroyed.'
       end
       format.json { head :no_content }
     end
@@ -128,7 +128,7 @@ class EntriesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def entry_params
     params.require(:entry).permit(:user_id, :journal_id, :favorite,
-    :title, :body, :accomplishment,
-    :entry_header_cache, :entry_header)
+                                  :title, :body, :accomplishment,
+                                  :entry_header_cache, :entry_header)
   end
 end

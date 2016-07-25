@@ -5,7 +5,7 @@ module EntriesHelper
     if entry.favorite
       "<span class='heart'>#{mdi('heart', '', class: 'mdi-2x')}</i></span>".html_safe
     else
-      "<span class='heart'>#{mdi('heart', '', class: 'mdi-2x')}</i></span>".html_safe
+      "<span class='heart'>#{mdi('heart-outline', '', class: 'mdi-2x')}</i></span>".html_safe
     end
   end
 
