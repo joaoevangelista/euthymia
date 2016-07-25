@@ -26,7 +26,7 @@ class User < ApplicationRecord
       user = User.where(email: email).first if email
 
       # Create the user if it's a new registration
-      create_user_if_new user
+      create_user_if_new user, auth
     end
     save_identity_user user
     user
@@ -43,7 +43,7 @@ class User < ApplicationRecord
   end
 end
 
-def create_user_if_new(user)
+def create_user_if_new(user, auth)
   if user.nil?
     user = User.new(
       name: auth.extra.raw_info.name,
