@@ -10,7 +10,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success,
                         kind: auth.provider.to_s.capitalize) if is_navigational_format?
     else
-      session['devise.facebook_data'] = request.env['omniauth.auth']
+      session["devise.#{auth.provider}_data"] = request.env['omniauth.auth']
       redirect_to new_user_registration_url
     end
   end
@@ -20,7 +20,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   alias twitter provider
-  alias github provider
+  alias facebook provider
   alias google_oauth2 provider
 
   def after_sign_in_path_for(resource)
