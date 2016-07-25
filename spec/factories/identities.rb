@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :indentity do
+  factory :identity do
     user nil
     provider "MyString"
     uid "MyString"

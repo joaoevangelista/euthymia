@@ -14,6 +14,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
    alias_method :twitter, :provider
+   alias_method :github, :provider
 
    def after_sign_in_path_for(resource)
     if resource.email_verified?
