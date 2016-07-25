@@ -10,9 +10,9 @@
         <div class="col-xs-12 col-md-8 col-md-offset-2 space">
           <%= form_for(current_user, :as => 'user', :url => end_finish_signup_path(current_user), :html => { role: 'form'}) do |f| %>
           <% if @show_errors && current_user.errors.any? %>
-          <div id="error_explanation">
+          <div id="error_explanation alert alert-danger">
             <% current_user.errors.full_messages.each do |msg| %>
-            <%= msg %><br>
+            <%= msg %>
             <% end %>
           </div>
           <% end %>
@@ -22,6 +22,9 @@
               <%= f.text_field :email, :autofocus => true, :value => '', class: 'form-control form-text' %>
               <p class="help-block">Please confirm your email address. No spam.</p>
             </div>
+          </div>
+          <div class="form-group">
+            <%= f.password_field :password, class: 'form-control form-text', placeholder: 'Enter a password'  %>
           </div>
           <div class="actions">
             <%= f.submit 'Continue', :class => 'btn btn-lg btn-success' %>
