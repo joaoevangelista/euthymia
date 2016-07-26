@@ -183,9 +183,9 @@ pt-BR:
         current_password: 'Senha atual'
       entry:
         title: 'Título'
-        description: 'Description'
-        accomplishment: 'Accomplishment'
-        entry_header: 'Header'
+        description: 'Descrição'
+        accomplishment: 'Conquista'
+        entry_header: 'Imagem'
       journal:
         title: 'Título'
     errors:
