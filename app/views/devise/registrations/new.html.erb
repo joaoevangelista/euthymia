@@ -1,13 +1,13 @@
 <section class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h2 class="text-xs-center">Sign up</h2>
+      <h2 class="text-xs-center"><%= t('.title') %></h2>
     </div>
   </div>
   <div class="row space">
     <div class="col-xs-12">
       <p class="welcome-text">
-        Welcome to Euthymia! Please sign up if you don't have an account already.
+        <%= t('.message') %>
       </p>
     </div>
   </div>
@@ -22,7 +22,7 @@
               <span class="input-group-addon">
                 <i class="fa fa-fw fa-user"></i>
               </span>
-              <%= f.text_field :name, class: 'form-control form-text', placeholder: 'Your name' %>
+              <%= f.text_field :name, class: 'form-control form-text', placeholder: t('.name_placeholder') %>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
               <span class="input-group-addon">
                 <i class="fa fa-fw fa-envelope-o"></i>
               </span>
-              <%= f.email_field :email, class: 'form-control form-text', placeholder: 'Enter an email' %>
+              <%= f.email_field :email, class: 'form-control form-text', placeholder: t('.email_placeholder') %>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@
               <span class="input-group-addon">
                 <i class="fa fa-fw fa-lock"></i>
               </span>
-              <%= f.password_field :password, class: 'form-control form-text', placeholder: 'Enter a password' %>
+              <%= f.password_field :password, class: 'form-control form-text', placeholder: t('.password_placeholder') %>
             </div>
           </div>
         </div>
@@ -58,14 +58,14 @@
               <span class="input-group-addon">
                 <i class="fa fa-fw fa-unlock"></i>
               </span>
-              <%= f.password_field :password_confirmation, class: 'form-control form-text', placeholder: 'Confirm your password' %>
+              <%= f.password_field :password_confirmation, class: 'form-control form-text', placeholder: t('.password_confirmation_placeholder') %>
             </div>
           </div>
         </div>
       </div>
 
       <div class="actions text-xs-center">
-        <%= f.submit "Sign up", class: 'btn btn-lg btn-success btn-xs-block' %>
+        <%= f.submit t('.signup_button'), class: 'btn btn-lg btn-success btn-xs-block' %>
       </div>
 
       <% end %>

@@ -123,6 +123,14 @@ pt-BR:
           title: 'Zona de Perigo'
           description: 'Descontente ?'
           cancel_account: 'Cancelar minha conta'
+      new:
+        title: Registrar-se
+        message: "Bem vindo à Euthymia! Por favor, registre-se caso você não tenha uma conta ainda."
+        name_placeholder: 'Seu nome'
+        email_placeholder: 'Entre com seu email'
+        password_placeholder: 'Entre com uma senha'
+        password_confirmation_placeholder: 'Confrime a sua senha'
+        signup_button: "Registrar"
 # Active record
   activerecord:
     models:

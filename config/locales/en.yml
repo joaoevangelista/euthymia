@@ -124,6 +124,14 @@ en:
           title: 'Danger Zone'
           description: 'Unhappy ?'
           cancel_account: 'Cancel my account'
+      new:
+        title: Sign up
+        message: "Welcome to Euthymia! Please sign up if you don't have an account already."
+        name_placeholder: 'Your name'
+        email_placeholder: 'Enter an email'
+        password_placeholder: 'Enter a password'
+        password_confirmation_placeholder: 'Confirm your password'
+        signup_button: "Sign up"
 # Active record
   activerecord:
     models:
