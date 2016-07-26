@@ -19,7 +19,7 @@
     <div class="col-xs-12">
       <div class="form-group <%= entry.errors[:title].empty? ? '' : 'has-danger' %>">
         <%= f.text_field :title, class: 'form-control input-lg form-text text-xs-center',
-         autocomplete: 'off', placeholder: 'Give your entry a title' %>
+         autocomplete: 'off', placeholder: t('.title_placeholder') %>
         <% if entry.errors[:title].any? %>
         <% entry.errors[:title].each do |message| %>
         <span class="help-block"><%= message.capitalize %></span>
@@ -32,9 +32,9 @@
     <div class="col-xs-12">
       <div class="form-group <%= entry.errors[:body].empty? ? '' : 'has-danger' %>">
         <button type="button" class="pull-xs-right open-zen btn-sm btn-link">
-          <span><i class="mdi mdi-half mdi-auto-fix"></i></span>&nbsp;&nbsp;Open Zen Mode</button>
+          <span><i class="mdi mdi-half mdi-auto-fix"></i></span>&nbsp;&nbsp;<%= t('.open_zen_mode') %></button>
         <%= f.text_area :body, class: 'form-control form-text zen-mode ',
-        placeholder: 'Write about your day, emotions or anything else that you want to record' %>
+        placeholder: t('.description_placeholder') %>
         <% if entry.errors[:body].any? %>
         <% entry.errors[:body].each do |message| %>
         <span class="help-block"><%= message.capitalize %></span>
@@ -48,7 +48,7 @@
       <div class="form-group <%= entry.errors[:accomplishment].empty? ? '' : 'has-danger' %>">
         <%= f.label :accomplishment, class: 'control-label' %>
         <%= f.text_field :accomplishment, class: 'form-control form-text',
-        placeholder: 'What was the best thing that happened to you, today?' %>
+        placeholder: t('.accomplishiment_placeholder') %>
         <% if entry.errors[:accomplishment].any? %>
         <% entry.errors[:accomplishment].each do |message| %>
         <span class="help-block"><%= message.capitalize %></span>

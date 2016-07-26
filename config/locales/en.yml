@@ -71,10 +71,11 @@ en:
   entries:
     entry_item:
       written_at: 'Written at'
-    sentiment:
+    sentiments:
       positive: 'Positive'
       negative: 'Negative'
       not_ready: 'Sentiments are not ready yet.'
+      overall_sentiments: 'Overall sentiments'
     emotions:
       joy: 'Joy'
       surprise: 'Surprise'
@@ -82,8 +83,9 @@ en:
       anger: 'Anger'
       fear: 'Fear'
       not_ready: 'Emotions are not ready yet.'
+      likely_emotions: 'Most likely emotions'
     index:
-      no_entries: 'Oh, no entries yet on this journal. Do you want to create %{link} ?'
+      no_entries_html: 'Oh, no entries yet on this journal. Do you want to create %{link} ?'
       new_one: 'a new one'
       new_entry: 'New Entry'
     form:

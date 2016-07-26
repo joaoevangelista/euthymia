@@ -2,7 +2,8 @@
   <div class="col-xs-12">
     <a class="btn btn-link btn-xs-block" href="#" data-toggle="collapse" data-target="#sentiments_percentages"
     aria-expanded="false" aria-controls="sentiments_percentages">
-    <h4>Overall Sentiments <%= mdi('chevron-down') %></h4>
+    <h4><%= t('.overall_sentiments') %>
+       <%= mdi('chevron-down') %></h4>
   </a>
   <div class="collapse sentiments_collpsable" id="sentiments_percentages">
     <section class="space-2x text-xs-center">
@@ -10,7 +11,7 @@
       <%= render_smile recent_sentiment %>
       <% else %>
       <p class="lead text-xs-center">
-        Sentiment results not ready yet.
+        <%= t('.not_ready') %>
       </p>
       <% end %>
   </div>

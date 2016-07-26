@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="pull-md-right">
-        <%= link_to 'New Entry', new_journal_entry_path(@journal), class: 'btn btn-sm btn-xs-block btn-primary-outline' %>
+        <%= link_to t('.new_entry'), new_journal_entry_path(@journal), class: 'btn btn-sm btn-xs-block btn-primary-outline' %>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@
     <div class="col-xs-12 col-md-10 col-md-offset-1">
       <% if @entries.empty? %>
       <p class="lead text-xs-center">
-        Oh, no entries yet on this journal. Do you want to create a <%= link_to 'new one', new_journal_entry_path(@journal) %> ?
+        <%= t('.no_entries_html', link: link_to(t('.new_one'), new_journal_entry_path(@journal))) %>  ?
       </p>
       <% else %>
       <% @entries.each do |entry| %>
