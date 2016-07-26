@@ -98,6 +98,16 @@ pt-BR:
       accomplishment_title: 'Urrull! Você conquistou algo neste dia !'
       edit_option: 'Editar'
       delete_option: 'Apagar'
+  search:
+    index:
+      title: 'Registros encontrados'
+      no_results: 'Nenhum resultado foi encontrado'
+  users:
+    finish_signup:
+      title: 'Complete seu registro'
+      email_help: 'Por favor, confirme seu email, para eventual uso'
+      password_placeholder: 'Entre com uma nova senha'
+      button: 'Continuar'
 # Active record
   activerecord:
     models:
