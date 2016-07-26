@@ -241,11 +241,11 @@ pt-BR:
       create: "Salvar %{model}"
       update: "Atualizar %{model}"
     application:
-      new_entry: 'New Entry'
+      new_entry: 'Novo Registro'
       delete_link:
-        confirm: "This can't ben undone !"
-        confirm_title: 'Are you sure ?'
-        confirm_cancel: 'Cancel'
+        confirm: "Isso não poderá ser desfeito !"
+        confirm_title: 'Você tem certeza ?'
+        confirm_cancel: 'Cancelar'
         confirm_proceed: 'Ok'
     emotions:
       joy: 'Felicidade'
