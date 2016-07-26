@@ -47,6 +47,8 @@ gem 'gemojione'
 gem 'escape_utils'
 # Use Redis Store to cache and session storage
 gem 'redis-rails'
+# Language selector
+gem 'http_accept_language'
 
 # Cloudinary
 gem 'carrierwave'

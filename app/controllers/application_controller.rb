@@ -2,9 +2,9 @@
 # :nodoc:
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :set_locale
 
   include Pundit
-
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def user_not_authorized(exception)
@@ -18,5 +18,11 @@ class ApplicationController < ActionController::Base
   # when it succeeds the login
   def after_sign_in_path_for(_resource)
     journals_path
+  end
+
+  private
+
+  def set_locale
+    I18n.locale = http_accept_language.compatible_language_from(I18n.available_locales)
   end
 end
