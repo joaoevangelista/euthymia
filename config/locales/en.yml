@@ -5,9 +5,9 @@ en:
       title: 'Euthymia'
       description: 'Because knowing your emotions matters'
       about: |
-              "It's great to write about you, it increase your knowing about yourself.
+              It's great to write about you, it increase your knowing about yourself.
               But sometimes even we don't know, because of the mix of feelings we get.
-              Sometimes we just don't see where we are heading with our emotions."
+              Sometimes we just don't see where we are heading with our emotions.
       motivated: 'We are here to help you!'
       get_started:
         title: 'Ready ?'
@@ -22,21 +22,21 @@ en:
         private:
           title: 'Everything is private'
           description: |
-                       "Your journals and entries are only private.
+                       Your journals and entries are only private.
                        No more messing with permissions or leting something out
-                       because you forgot to toggle something."
+                       because you forgot to toggle something.
         analysis:
           title: 'Natural language analysis'
           description: |
-                       "To help you indentifying you mixed emotions,
+                       To help you indentifying you mixed emotions,
                        we use the powerful Indico API to process the entries.
                        But do not worry ! no data is kept on their side It is
                        used to identify the 4 more common emotions: Joy, surprise,
                        sadness, fear and anger and the overall sentiment about
-                       the entry."
+                       the entry.
       footer:
         emojis: 'Emojis by'
-        made_with: 'Made with %{icon} by'
+        made_with_html: 'Made with %{icon} by'
   navbar:
     signin: 'Sign In'
     signout: 'Sign Up'
