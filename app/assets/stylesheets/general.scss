@@ -6,6 +6,10 @@ header + div + .container {
   margin-top: 5rem;
 }
 
+header + div + .alert + .container {
+  margin-top: 1rem;
+}
+
 .space {
   margin-top: 1rem;
 }
@@ -124,4 +128,18 @@ blockquote {
   border-top:1px solid darken(whitesmoke, 7%);
   border-left: 1px solid darken(whitesmoke, 7%);
   border-bottom: 2px solid darken(whitesmoke, 7%);
+}
+
+.alert.alert-info {
+  background-color: $brand-info;
+  border-color: transparent;
+  border: none;
+  color: white;
+  border-radius: 0;
+}
+.alert-dismissible .close {
+  color: white;
+}
+.alert-dismissible .close:hover {
+  color: white;
 }
