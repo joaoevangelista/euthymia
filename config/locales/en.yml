@@ -1,23 +1,224 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  hello: "Hello world"
+  home:
+    index:
+      title: 'Euthymia'
+      description: 'Because knowing your emotions matters'
+      about: |
+              "It's great to write about you, it increase your knowing about yourself.
+              But sometimes even we don't know, because of the mix of feelings we get.
+              Sometimes we just don't see where we are heading with our emotions."
+      motivated: 'We are here to help you!'
+      get_started:
+        title: 'Ready ?'
+        button: 'Get Started'
+      features:
+        markdown:
+          title: 'Markdown'
+          description: "With markdown syntax support you can write and format your entries as you go. Making easier to read back."
+        bookmark:
+          title: 'Bookmark your entries'
+          description: "Make easy to remember the great times and the important notes about you. At a click of distance."
+        private:
+          title: 'Everything is private'
+          description: |
+                       "Your journals and entries are only private.
+                       No more messing with permissions or leting something out
+                       because you forgot to toggle something."
+        analysis:
+          title: 'Natural language analysis'
+          description: |
+                       "To help you indentifying you mixed emotions,
+                       we use the powerful Indico API to process the entries.
+                       But do not worry ! no data is kept on their side It is
+                       used to identify the 4 more common emotions: Joy, surprise,
+                       sadness, fear and anger and the overall sentiment about
+                       the entry."
+      footer:
+        emojis: 'Emojis by'
+        made_with: 'Made with %{icon} by'
+  navbar:
+    signin: 'Sign In'
+    signout: 'Sign Up'
+    search: 'Search for...'
+    journals: 'Journals'
+    add:
+      new_journal: 'New Journal'
+      new_entry: 'New Entry'
+    profile:
+      edit: 'Edit Account'
+      signout: 'Sign Out'
+  journals:
+    index:
+      title: 'Journals'
+      no_journals: 'Journals are used to organize your entries, but there is no one right now.'
+      create_new: 'You can create your first !'
+      new_journal: 'New Journal'
+    new:
+      title: 'Create a journal'
+    form:
+      title_placeholder: 'Give your journal a title'
+    edit:
+      title: 'Editing %{name}'
+    show:
+      title: 'Details of %{name}'
+      last_updated: 'Last time updated was at: %{datetime}'
+      count: 'You have %{total} entries in this journal'
+      or_create: 'or write a new entry here'
+      see_entries: 'See the entries'
+      avg_emotions: 'Average emotions'
+      edit: 'Edit'
+  entries:
+    index:
+      no_entries: 'Oh, no entries yet on this journal. Do you want to create %{link} ?'
+      new_one: 'a new one'
+      new_entry: 'New Entry'
+    form:
+      title_placeholder: 'Give your entry a title'
+      description_placeholder: 'Write about your day, emotions or anything else that you want to record'
+      open_zen_mode: 'Open Zen Mode'
+      accomplishiment_placeholder: 'What was the best thing that happened to you, today?'
+    show:
+      written_at: 'Written at %{datetime}'
+      overall_sentiments: 'Overall Sentiments'
+      most_likely_emotions: 'Most likely emotions'
+      edit_option: 'Edit'
+      delete_option: 'Delete'
+# Active record
+  activerecord:
+    models:
+      user:
+        one: 'Person'
+        other: People'
+      entry:
+        one: 'Entry'
+        other: 'Entries'
+      journal:
+        one: 'Journal'
+        other: 'Journals'
+      emotion:
+        one: 'Emotion'
+        other: 'Emotions'
+      sentiment:
+        one: 'Sentiment'
+        other: 'Sentiments'
+      identity:
+        one: 'Identity'
+        other: 'Identities'
+    attributes:
+      user:
+        name: 'Name'
+        email: 'Email'
+        password: 'Password'
+      entry:
+        title: 'Title'
+        description: 'Description'
+        accomplishment: 'Accomplishment'
+        entry_header: 'Header'
+      journal:
+        title: 'Title'
+    errors:
+      message:
+        blank: "Can't blank"
+        uniquiness: 'Already taken'
+
+  date:
+    abbr_day_names:
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    abbr_month_names:
+      - ~
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names:
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+    formats:
+      default: "%b, %d %Y"
+      long: "%B %d, %Y %H:%M"
+      short: "%b %d"
+    month_names:
+      - ~
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+    order:
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "about 1 hour"
+        other: "about %{count} hours"
+      about_x_months:
+        one: "about 1 month"
+        other: "about %{count} months"
+      about_x_years:
+        one: "about 1 year"
+        other: "about %{count} years"
+      almost_x_years:
+        one: "almost 1 year"
+        other: "almost %{count} years"
+      half_a_minute: "half a minute"
+      less_than_x_minutes:
+        one: "less than a minute"
+        other: "less than %{count} minutes"
+      less_than_x_seconds:
+        one: "less than 1 second"
+        other: "less than %{count} seconds"
+      over_x_years:
+        one: "over 1 year"
+        other: "over %{count} years"
+      x_days:
+        one: "1 day"
+        other: "%{count} days"
+      x_minutes:
+        one: "1 minute"
+        other: "%{count} minutes"
+      x_months:
+        one: "1 month"
+        other: "%{count} months"
+      x_seconds:
+        one: "1 second"
+        other: "%{count} seconds"
+  helpers:
+    submit:
+      create: "Save %{model}"
+      update: "Update %{model}"
+  views:
+    pagination:
+      first: "« First"
+      last: "Last »"
+      next: "Next ›"
+      previous: "‹ Prev"
+      truncate: "…"
