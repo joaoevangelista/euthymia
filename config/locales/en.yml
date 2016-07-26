@@ -111,6 +111,19 @@ en:
       email_help: 'Please confirm your email address. No spam.'
       password_placeholder: 'Enter a password'
       button: 'Continue'
+  devise:
+    registrations:
+      edit:
+        title: Edit Account
+        waiting_confirmation: Currently waiting confirmation for
+        password_tip: '(leave blank if you do not want to change it)'
+        password_length: '%{length} characters minimum'
+        password_change_confirmation: (we need your current password to confirm your changes)
+        update_button: 'Update'
+        danger_zone:
+          title: 'Danger Zone'
+          description: 'Unhappy ?'
+          cancel_account: 'Cancel my account'
 # Active record
   activerecord:
     models:

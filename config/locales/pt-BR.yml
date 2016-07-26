@@ -110,6 +110,19 @@ pt-BR:
       email_help: 'Por favor, confirme seu email, para eventual uso'
       password_placeholder: 'Entre com uma nova senha'
       button: 'Continuar'
+  devise:
+    registrations:
+      edit:
+        title: 'Atualizar Conta'
+        waiting_confirmation: 'Atualmente esperando confirmação de'
+        password_tip: '(deixe em branco caso não queira altera-la)'
+        password_length: 'minímo de %{length} caracteres'
+        password_change_confirmation: (nós precisamos que repita sua senha atual para confirmar as alterações)
+        update_button: 'Autalizar'
+        danger_zone:
+          title: 'Zona de Perigo'
+          description: 'Descontente ?'
+          cancel_account: 'Cancelar minha conta'
 # Active record
   activerecord:
     models:
