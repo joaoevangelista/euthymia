@@ -39,7 +39,7 @@ en:
         made_with_html: 'Made with %{icon} by'
   navbar:
     signin: 'Sign In'
-    signout: 'Sign Up'
+    signup: 'Sign Up'
     search: 'Search for...'
     journals: 'Journals'
     or: 'or'
@@ -132,6 +132,14 @@ en:
         password_placeholder: 'Enter a password'
         password_confirmation_placeholder: 'Confirm your password'
         signup_button: "Sign up"
+    sessions:
+      new:
+        title: Euthymia
+        message: Welcome! Please sign in with your Euthymia account to continue.
+        email_placeholder: 'Enter your email'
+        password_placeholder: 'Enter your password'
+        remember_me: 'Remember me'
+        signin: 'Sign In'
 # Active record
   activerecord:
     models:

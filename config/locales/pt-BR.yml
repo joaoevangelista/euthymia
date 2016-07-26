@@ -38,7 +38,7 @@ pt-BR:
         made_with: 'Feito com %{icon} por'
   navbar:
     signin: 'Entrar'
-    signout: 'Regitrar-se'
+    signup: 'Regitre-se'
     search: 'Procurar por...'
     journals: 'Diários'
     or: 'ou'
@@ -131,6 +131,14 @@ pt-BR:
         password_placeholder: 'Entre com uma senha'
         password_confirmation_placeholder: 'Confrime a sua senha'
         signup_button: "Registrar"
+    sessions:
+      new:
+        title: Euthymia
+        message: Bem vindo! Por favor entre com sua conta Euthymia para continuar.
+        email_placeholder: 'Entre com seu email'
+        password_placeholder: 'Entre com sua senha'
+        remember_me: 'Lembre-me'
+        signin: 'Entrar'
 # Active record
   activerecord:
     models:
