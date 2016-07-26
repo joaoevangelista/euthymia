@@ -11,12 +11,12 @@
         <ul class="nav navbar-nav pull-lg-right">
             <% if user_signed_in? %>
             <li class="nav-item"><%= render 'layouts/search_form' %></li>
-            <li class="nav-item"><%= link_to mdi('book', 'Journals'), journals_path, class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to mdi('book', t('navbar.journals')), journals_path, class: 'nav-link' %></li>
             <li class="nav-item dropdown">
               <a class="nav-link" id="add_dropdown" data-target="#" href="#" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-plus zmdi-hc-fw"></i><i class="fa fa-fw fa-angle-down"></i></a>
               <ul class="dropdown-menu xs-dropdown" aria-labelledby="navbarDropdown1">
-                <li><%= link_to 'New Journal', new_journal_path, class: 'dropdown-item' %></li>
+                <li><%= link_to t('navbar.add.new_journal'), new_journal_path, class: 'dropdown-item' %></li>
                 <li class="divider"></li>
                 <%= yield :create_entry %>
               </ul>
@@ -24,11 +24,11 @@
             <%= render 'layouts/profile_menu' %>
             <% else %>
             <li class="nav-item">
-              <%= link_to mdi('login-variant', 'Sign In'),
+              <%= link_to mdi('login-variant', t('navbar.signin')),
                new_user_session_path, class: 'nav-link' %>
             </li>
-            <li class="nav-item"><span class="nav-link">or</span></li>
-            <li class="nav-item"><%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %></li>
+            <li class="nav-item"><span class="nav-link"><%= t('navbar.or') %></span></li>
+            <li class="nav-item"><%= link_to t('navbar.signup'), new_user_registration_path, class: 'nav-link' %></li>
             <% end %>
         </ul>
     </div>

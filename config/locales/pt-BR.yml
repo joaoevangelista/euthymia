@@ -41,6 +41,7 @@ pt-BR:
     signout: 'Regitrar-se'
     search: 'Procurar por...'
     journals: 'Diários'
+    or: 'ou'
     add:
       new_journal: 'Novo Diário'
       new_entry: 'Novo Registro'

@@ -42,6 +42,7 @@ en:
     signout: 'Sign Up'
     search: 'Search for...'
     journals: 'Journals'
+    or: 'or'
     add:
       new_journal: 'New Journal'
       new_entry: 'New Entry'
