@@ -69,6 +69,19 @@ en:
       avg_emotions: 'Average emotions'
       edit: 'Edit'
   entries:
+    entry_item:
+      written_at: 'Written at'
+    sentiment:
+      positive: 'Positive'
+      negative: 'Negative'
+      not_ready: 'Sentiments are not ready yet.'
+    emotions:
+      joy: 'Joy'
+      surprise: 'Surprise'
+      sadness: 'Sadness'
+      anger: 'Anger'
+      fear: 'Fear'
+      not_ready: 'Emotions are not ready yet.'
     index:
       no_entries: 'Oh, no entries yet on this journal. Do you want to create %{link} ?'
       new_one: 'a new one'
@@ -82,6 +95,7 @@ en:
       written_at: 'Written at %{datetime}'
       overall_sentiments: 'Overall Sentiments'
       most_likely_emotions: 'Most likely emotions'
+      accomplishment_title: 'Oh yeah! You accomplished something at this day !'
       edit_option: 'Edit'
       delete_option: 'Delete'
 # Active record

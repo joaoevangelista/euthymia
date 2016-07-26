@@ -70,6 +70,17 @@ pt-BR:
   entries:
     entry_item:
       written_at: 'Escrito em'
+    sentiment:
+      positive: 'Positivo'
+      negative: 'Negativo'
+      not_ready: 'Sentimentos ainda não prontos'
+    emotions:
+      joy: 'Felicidade'
+      surprise: 'Surpresa'
+      sadness: 'Tristeza'
+      anger: 'Raiva'
+      fear: 'Medo'
+      not_ready: 'Emoções ainda não prontas.'
     index:
       no_entries: 'Oh, nenhum registro ainda neste diário, Você gostaria de criar '
       new_one: 'um novo ?'
@@ -83,7 +94,7 @@ pt-BR:
       written_at: 'Escrito em %{datetime}'
       overall_sentiments: 'Sentimentos gerais'
       most_likely_emotions: 'As emoções mais prováveis'
-
+      accomplishment_title: 'Urrull! Você conquistou algo neste dia !'
       edit_option: 'Editar'
       delete_option: 'Apagar'
 # Active record
