@@ -71,10 +71,11 @@ pt-BR:
   entries:
     entry_item:
       written_at: 'Escrito em'
-    sentiment:
+    sentiments:
       positive: 'Positivo'
       negative: 'Negativo'
       not_ready: 'Sentimentos ainda não prontos'
+      overall_sentiments: 'Sentimentos gerais'
     emotions:
       joy: 'Felicidade'
       surprise: 'Surpresa'
@@ -82,6 +83,7 @@ pt-BR:
       anger: 'Raiva'
       fear: 'Medo'
       not_ready: 'Emoções ainda não prontas.'
+      likely_emotions: 'Emoções mais prováveis'
     index:
       no_entries: 'Oh, nenhum registro ainda neste diário, Você gostaria de criar '
       new_one: 'um novo ?'
