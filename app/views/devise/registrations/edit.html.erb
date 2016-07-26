@@ -110,7 +110,7 @@
       <% if @user.identities.map {|i| i.provider }.include? 'google_oauth2' %>
       <%= link_to mdi('google', t('.social_accounts.already_linked', provider: 'Google')),
        omniauth_authorize_path(resource_name, :google_oauth2),
-      class: 'btn btn-lg btn-xs-block btn-twitter space-xs' %>
+      class: 'btn btn-lg btn-xs-block btn-google space-xs' %>
       <% else %>
       <%= link_to mdi('google', t('.social_accounts.link_with', provider: 'Google')),
        omniauth_authorize_path(resource_name, :google_oauth2),
