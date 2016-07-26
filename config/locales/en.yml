@@ -120,6 +120,10 @@ en:
         password_length: '%{length} characters minimum'
         password_change_confirmation: (we need your current password to confirm your changes)
         update_button: 'Update'
+        social_accounts:
+          title: 'Social Accounts'
+          link_with: 'Link with %{provider}'
+          already_linked: 'Linked with %{provider}'
         danger_zone:
           title: 'Danger Zone'
           description: 'Unhappy ?'

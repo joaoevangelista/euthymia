@@ -74,6 +74,50 @@
       <% end %>
     </div>
   </div>
+
+  <div class="row">
+    <hr>
+    <div class="col-xs-12 space">
+      <h4 class="text-xs-center">
+        <%= t('.social_accounts.title') %>
+      </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <% if @user.identities.map {|i| i.provider }.include? 'twitter' %>
+      <%= link_to mdi('twitter', t('.social_accounts.already_linked', provider: 'Twitter')),
+       omniauth_authorize_path(resource_name, :twitter),
+      class: 'btn btn-lg btn-xs-block btn-twitter space-xs' %>
+      <% else %>
+      <%= link_to mdi('twitter', t('.social_accounts.link_with', provider: 'Twitter')),
+       omniauth_authorize_path(resource_name, :twitter),
+      class: 'btn btn-lg btn-xs-block btn-twitter space-xs' %>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <% if @user.identities.map {|i| i.provider }.include? 'facebook' %>
+      <%= link_to mdi('twitter', t('.social_accounts.already_linked', provider: 'Facebook')),
+       omniauth_authorize_path(resource_name, :facebook),
+      class: 'btn btn-lg btn-xs-block btn-facebook space-xs' %>
+      <% else %>
+      <%= link_to mdi('facebook', t('.social_accounts.link_with', provider: 'Facebook')),
+       omniauth_authorize_path(resource_name, :facebook),
+      class: 'btn btn-lg btn-xs-block btn-facebook space-xs' %>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <% if @user.identities.map {|i| i.provider }.include? 'google_oauth2' %>
+      <%= link_to mdi('google', t('.social_accounts.already_linked', provider: 'Google')),
+       omniauth_authorize_path(resource_name, :google_oauth2),
+      class: 'btn btn-lg btn-xs-block btn-twitter space-xs' %>
+      <% else %>
+      <%= link_to mdi('google', t('.social_accounts.link_with', provider: 'Google')),
+       omniauth_authorize_path(resource_name, :google_oauth2),
+      class: 'btn btn-lg btn-xs-block btn-google space-xs' %>
+      <% end %>
+    </div>
+  </div>
   <div class="row">
     <hr>
     <div class="col-xs-12 space-2x">

@@ -119,6 +119,10 @@ pt-BR:
         password_length: 'minímo de %{length} caracteres'
         password_change_confirmation: (nós precisamos que repita sua senha atual para confirmar as alterações)
         update_button: 'Autalizar'
+        social_accounts:
+          title: 'Contas Sociais'
+          link_with: 'Conectar com %{provider}'
+          already_linked: 'Conectado com %{provider}'
         danger_zone:
           title: 'Zona de Perigo'
           description: 'Descontente ?'
