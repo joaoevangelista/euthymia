@@ -238,6 +238,22 @@ pt-BR:
     submit:
       create: "Salvar %{model}"
       update: "Atualizar %{model}"
+    application:
+      new_entry: 'New Entry'
+      delete_link:
+        confirm: "This can't ben undone !"
+        confirm_title: 'Are you sure ?'
+        confirm_cancel: 'Cancel'
+        confirm_proceed: 'Ok'
+    emotions:
+      joy: 'Felicidade'
+      surprise: 'Surpresa'
+      sadness: 'Tristeza'
+      anger: 'Raiva'
+      fear: 'Medo'
+    sentiments:
+      positive: 'Positivo'
+      negative: 'Negativo'
   views:
     pagination:
       first: "« Primeira"

@@ -16,12 +16,12 @@ module SentimentsHelper
     if status.eql? :positive
       "<span>
       #{image_tag 'sentiments/positive.svg', height: 55}
-      <p class='space text-emphasis'>Positive</p>
+      <p class='space text-emphasis'>#{I18n.t('helpers.sentiments.positive')}</p>
       </span>".html_safe
     else
       "<span>
       #{image_tag 'sentiments/negative.svg', height: 55}
-      <p class='space text-emphasis'>Negative</p>
+      <p class='space text-emphasis'>#{I18n.t('helpers.sentiments.negative')}</p>
       </span>".html_safe
     end
   end
