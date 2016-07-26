@@ -140,6 +140,16 @@ en:
         password_placeholder: 'Enter your password'
         remember_me: 'Remember me'
         signin: 'Sign In'
+    shared:
+      links:
+        has_account: "Already have an account ? Sign in"
+        signup: "Sign up"
+        forgot_password: "Forgot your password?"
+        confirmation: "Didn't receive confirmation instructions?"
+        unlock: "Didn't receive unlock instructions?"
+        or: 'Or'
+      providers:
+        sign_in_with: 'Sign in with %{provider}'
 # Active record
   activerecord:
     models:

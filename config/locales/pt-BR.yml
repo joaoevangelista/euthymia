@@ -139,6 +139,16 @@ pt-BR:
         password_placeholder: 'Entre com sua senha'
         remember_me: 'Lembre-me'
         signin: 'Entrar'
+    shared:
+      links:
+        has_account: "Já possui uma conta? Entre aqui"
+        signup: "Registrar-se"
+        forgot_password: "Esqueceu sua senha ?"
+        confirmation: "Não recebeu as instruções de confirmação ?"
+        unlock: "Não recebeu as instruções de destravamento ?"
+        or: 'Ou'
+      providers:
+        sign_in_with: 'Entre com o %{provider}'
 # Active record
   activerecord:
     models:
