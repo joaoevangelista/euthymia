@@ -35,11 +35,11 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def link_account_or_signin(identity, user, auth)
     if user_signed_in?
       if identity.user == current_user
-        redirect_to edit_user_registration_path(user), notice: 'Account already linked!'
+        redirect_to edit_user_registration_path(user), notice: I18n.t('omniauth.already_linked')
       else
         identity.user = current_user
         identity.save
-        redirect_to edit_user_registration_path(user), notice: 'Succefully link account!'
+        redirect_to edit_user_registration_path(user), notice: I18n.t('omniauth.successfully_linked')
       end
     else
       sign_in_and_redirect user, event: :authentication

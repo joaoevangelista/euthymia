@@ -153,6 +153,9 @@ pt-BR:
         or: 'Ou'
       providers:
         sign_in_with: 'Entre com o %{provider}'
+  onmiauth:
+    successfully_linked: 'Conta conectada com sucesso !'
+    already_linked: 'Conta já conectada !'
 # Active record
   activerecord:
     models:

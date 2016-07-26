@@ -154,6 +154,9 @@ en:
         or: 'Or'
       providers:
         sign_in_with: 'Sign in with %{provider}'
+  onmiauth:
+    successfully_linked: 'Successfully linked account !'
+    already_linked: 'Account already linked !'
 # Active record
   activerecord:
     models:
