@@ -11,7 +11,7 @@
     <div class="col-xs-12">
       <div class="form-group <%= journal.errors[:title].empty? ? '' : 'has-danger' %>">
         <%= f.text_field :title, class: 'form-control text-xs-center form-text input-lg',
-        placeholder: 'Give your journal a title', required: 'required', autocomplete: 'off' %>
+        placeholder: t('.title_placeholder'), required: 'required', autocomplete: 'off' %>
         <% if journal.errors[:title].any? %>
         <% journal.errors[:title].each do |message| %>
         <span class="help-block"><%= message.capitalize %></span>

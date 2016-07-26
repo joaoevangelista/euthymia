@@ -1,21 +1,21 @@
 <section class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="text-xs-center">Journals</h1>
+      <h1 class="text-xs-center"><%= t('.title') %></h1>
     </div>
   </div>
   <div class="row space-2x">
     <div class="col-xs-12">
       <div class="pull-md-right">
-        <%= link_to 'New Journal', new_journal_path, class: 'btn btn-sm btn-xs-block btn-primary-outline' %>
+        <%= link_to t('.new_journal'), new_journal_path, class: 'btn btn-sm btn-xs-block btn-primary-outline' %>
       </div>
     </div>
   </div>
   <div class="row space">
     <div class="col-xs-12">
       <% if @journals.empty? %>
-      <p class="lead text-xs-center">Journals are used to organize your entries, but there is no one right now.</p>
-      <p class="text-xs-center lead"><%= link_to 'You can create your first !', new_journal_path %></p>
+      <p class="lead text-xs-center"><%= t('.no_journals') %></p>
+      <p class="text-xs-center lead"><%= link_to t('.create_new'), new_journal_path %></p>
       <% else %>
       <div class="table responsive">
         <table class="table">
