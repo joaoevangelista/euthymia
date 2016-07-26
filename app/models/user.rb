@@ -17,9 +17,7 @@ class User < ApplicationRecord
 
   validates_format_of :email, without: TEMP_EMAIL_REGEX, on: :update
 
-  def self.find_for_oauth(auth, signed_in_resource = nil)
-    # Get the identity and user if they exist
-    identity = Identity.find_for_oauth(auth)
+  def self.find_for_oauth(auth, identity = nil,signed_in_resource = nil)
 
     # If a signed_in_resource is provided it always overrides the existing user
     # to prevent the identity being locked with accidentally created accounts.
