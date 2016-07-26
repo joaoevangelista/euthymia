@@ -35,7 +35,7 @@ pt-BR:
                        tristeza, medo e raiva; e o sentimento entorno"
       footer:
         emojis: 'Emojis por'
-        made_with: 'Feito com %{icon} por'
+        made_with_html: 'Feito com %{icon} por'
   navbar:
     signin: 'Entrar'
     signup: 'Regitre-se'
