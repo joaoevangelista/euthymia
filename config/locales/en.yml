@@ -1,23 +1,308 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  hello: "Hello world"
+  home:
+    index:
+      title: 'Euthymia'
+      description: 'Because knowing your emotions matters'
+      about: |
+              It's great to write about you, it increase your knowing about yourself.
+              But sometimes even we don't know, because of the mix of feelings we get.
+              Sometimes we just don't see where we are heading with our emotions.
+      motivated: 'We are here to help you!'
+      get_started:
+        title: 'Ready ?'
+        button: 'Get Started'
+      features:
+        markdown:
+          title: 'Markdown'
+          description: "With markdown syntax support you can write and format your entries as you go. Making easier to read back."
+        bookmark:
+          title: 'Bookmark your entries'
+          description: "Make easy to remember the great times and the important notes about you. At a click of distance."
+        private:
+          title: 'Everything is private'
+          description: |
+                       Your journals and entries are only private.
+                       No more messing with permissions or leting something out
+                       because you forgot to toggle something.
+        analysis:
+          title: 'Natural language analysis'
+          description: |
+                       To help you indentifying you mixed emotions,
+                       we use the powerful Indico API to process the entries.
+                       But do not worry ! no data is kept on their side It is
+                       used to identify the 4 more common emotions: Joy, surprise,
+                       sadness, fear and anger and the overall sentiment about
+                       the entry.
+      footer:
+        emojis: 'Emojis by'
+        made_with_html: 'Made with %{icon} by'
+  navbar:
+    signin: 'Sign In'
+    signup: 'Sign Up'
+    search: 'Search for...'
+    journals: 'Journals'
+    or: 'or'
+    add:
+      new_journal: 'New Journal'
+      new_entry: 'New Entry'
+    profile:
+      edit: 'Edit Account'
+      signout: 'Sign Out'
+  journals:
+    index:
+      title: 'Journals'
+      no_journals: 'Journals are used to organize your entries, but there is no one right now.'
+      create_new: 'You can create your first !'
+      new_journal: 'New Journal'
+    new:
+      title: 'Create a journal'
+    form:
+      title_placeholder: 'Give your journal a title'
+    edit:
+      title: 'Editing %{name}'
+    show:
+      title: 'Details of %{name}'
+      last_updated: 'Last time updated was at: %{datetime}'
+      count: 'You have %{total} entries in this journal'
+      or_create: 'or write a new entry here'
+      see_entries: 'See the entries'
+      avg_emotions: 'Average emotions'
+      edit: 'Edit'
+  entries:
+    entry_item:
+      written_at: 'Written at'
+    sentiments:
+      positive: 'Positive'
+      negative: 'Negative'
+      not_ready: 'Sentiments are not ready yet.'
+      overall_sentiments: 'Overall sentiments'
+    emotions:
+      joy: 'Joy'
+      surprise: 'Surprise'
+      sadness: 'Sadness'
+      anger: 'Anger'
+      fear: 'Fear'
+      not_ready: 'Emotions are not ready yet.'
+      likely_emotions: 'Most likely emotions'
+    index:
+      no_entries_html: 'Oh, no entries yet on this journal. Do you want to create %{link} ?'
+      new_one: 'a new one'
+      new_entry: 'New Entry'
+    form:
+      title_placeholder: 'Give your entry a title'
+      description_placeholder: 'Write about your day, emotions or anything else that you want to record'
+      open_zen_mode: 'Open Zen Mode'
+      accomplishiment_placeholder: 'What was the best thing that happened to you, today?'
+    show:
+      written_at: 'Written at %{datetime}'
+      overall_sentiments: 'Overall Sentiments'
+      most_likely_emotions: 'Most likely emotions'
+      accomplishment_title: 'Oh yeah! You accomplished something at this day !'
+      edit_option: 'Edit'
+      delete_option: 'Delete'
+  search:
+    index:
+      title: 'Entries found for your search '
+      no_results: 'No results where found'
+  users:
+    finish_signup:
+      title: 'Complete your registration'
+      email_help: 'Please confirm your email address. No spam.'
+      password_placeholder: 'Enter a password'
+      button: 'Continue'
+  devise:
+    registrations:
+      edit:
+        title: Edit Account
+        waiting_confirmation: Currently waiting confirmation for
+        password_tip: '(leave blank if you do not want to change it)'
+        password_length: '%{length} characters minimum'
+        password_change_confirmation: (we need your current password to confirm your changes)
+        update_button: 'Update'
+        danger_zone:
+          title: 'Danger Zone'
+          description: 'Unhappy ?'
+          cancel_account: 'Cancel my account'
+      new:
+        title: Sign up
+        message: "Welcome to Euthymia! Please sign up if you don't have an account already."
+        name_placeholder: 'Your name'
+        email_placeholder: 'Enter an email'
+        password_placeholder: 'Enter a password'
+        password_confirmation_placeholder: 'Confirm your password'
+        signup_button: "Sign up"
+    sessions:
+      new:
+        title: Euthymia
+        message: Welcome! Please sign in with your Euthymia account to continue.
+        email_placeholder: 'Enter your email'
+        password_placeholder: 'Enter your password'
+        remember_me: 'Remember me'
+        signin: 'Sign In'
+    shared:
+      links:
+        has_account: "Already have an account ? Sign in"
+        signup: "Sign up"
+        forgot_password: "Forgot your password?"
+        confirmation: "Didn't receive confirmation instructions?"
+        unlock: "Didn't receive unlock instructions?"
+        or: 'Or'
+      providers:
+        sign_in_with: 'Sign in with %{provider}'
+# Active record
+  activerecord:
+    models:
+      user:
+        one: 'Person'
+        other: People'
+      entry:
+        one: 'Entry'
+        other: 'Entries'
+      journal:
+        one: 'Journal'
+        other: 'Journals'
+      emotion:
+        one: 'Emotion'
+        other: 'Emotions'
+      sentiment:
+        one: 'Sentiment'
+        other: 'Sentiments'
+      identity:
+        one: 'Identity'
+        other: 'Identities'
+    attributes:
+      user:
+        name: 'Name'
+        email: 'Email'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+        current_password: 'Current password'
+      entry:
+        title: 'Title'
+        description: 'Description'
+        accomplishment: 'Accomplishment'
+        entry_header: 'Header'
+      journal:
+        title: 'Title'
+    errors:
+      message:
+        blank: "Can't blank"
+        uniquiness: 'Already taken'
+
+  date:
+    abbr_day_names:
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    abbr_month_names:
+      - ~
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names:
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+    formats:
+      default: "%b, %d %Y"
+      long: "%B %d, %Y %H:%M"
+      short: "%b %d"
+    month_names:
+      - ~
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+    order:
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "about 1 hour"
+        other: "about %{count} hours"
+      about_x_months:
+        one: "about 1 month"
+        other: "about %{count} months"
+      about_x_years:
+        one: "about 1 year"
+        other: "about %{count} years"
+      almost_x_years:
+        one: "almost 1 year"
+        other: "almost %{count} years"
+      half_a_minute: "half a minute"
+      less_than_x_minutes:
+        one: "less than a minute"
+        other: "less than %{count} minutes"
+      less_than_x_seconds:
+        one: "less than 1 second"
+        other: "less than %{count} seconds"
+      over_x_years:
+        one: "over 1 year"
+        other: "over %{count} years"
+      x_days:
+        one: "1 day"
+        other: "%{count} days"
+      x_minutes:
+        one: "1 minute"
+        other: "%{count} minutes"
+      x_months:
+        one: "1 month"
+        other: "%{count} months"
+      x_seconds:
+        one: "1 second"
+        other: "%{count} seconds"
+  helpers:
+    submit:
+      create: "Save %{model}"
+      update: "Update %{model}"
+    application:
+      new_entry: 'New Entry'
+      delete_link:
+        confirm: "This can't ben undone !"
+        confirm_title: 'Are you sure ?'
+        confirm_cancel: 'Cancel'
+        confirm_proceed: 'Ok'
+    emotions:
+      joy: 'Joy'
+      surprise: 'Surprise'
+      sadness: 'Sadness'
+      anger: 'Anger'
+      fear: 'Fear'
+    sentiments:
+      positive: 'Positive'
+      negative: 'Negative'
+  views:
+    pagination:
+      first: "« First"
+      last: "Last »"
+      next: "Next ›"
+      previous: "‹ Prev"
+      truncate: "…"

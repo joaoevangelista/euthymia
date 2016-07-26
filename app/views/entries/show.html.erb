@@ -26,7 +26,7 @@
   <div class="row">
     <div class="col-xs-12 text-xs-center">
       <span class="text-muted">
-        Written at <%= created_time_of @entry %>
+        <%= t('.written_at', datetime: created_time_of(@entry)) %>
       </span>
     </div>
   </div>
@@ -46,7 +46,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="text-success">
-            <p class="lead"><strong>Oooh Yeah!</strong> Let's remember what you accomplished !</p>
+            <p class="lead"><%= t('.accomplishment_title') %></p>
           </div>
         </div>
       </div>
@@ -71,8 +71,8 @@
           <span><i class="mdi mdi-settings"></i></span>
         </button>
         <div class="dropdown-menu" aria-labelledby="options_menu">
-          <%= link_to 'Edit', edit_journal_entry_path(@entry.journal, @entry), class: 'dropdown-item' %>
-          <%= delete_link 'Delete', journal_entry_path(@entry.journal, @entry), class: 'dropdown-item' %>
+          <%= link_to t('.edit_option'), edit_journal_entry_path(@entry.journal, @entry), class: 'dropdown-item' %>
+          <%= delete_link t('.delete_option'), journal_entry_path(@entry.journal, @entry), class: 'dropdown-item' %>
         </div>
       </div>
     </div>

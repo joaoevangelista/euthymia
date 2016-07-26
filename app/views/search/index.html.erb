@@ -1,7 +1,7 @@
 <section class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h2 class="query text-xs-center">Entries found for your search </h2>
+      <h2 class="query text-xs-center"><%= t('.title') %></h2>
     </div>
   </div>
   <div class="row">
@@ -11,7 +11,7 @@
         <img src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.6/assets/svg/1f615.svg"
          alt="confused" height="80" class="text-xs-center"/>
       </p>
-      <p class="text-xs-center">No results where found</p>
+      <p class="text-xs-center"><%= t('.no_results') %></p>
     <% else %>
       <% @results.each do |entry|  %>
       <%= render 'entries/entry_item', entry: entry %>

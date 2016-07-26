@@ -2,32 +2,27 @@
 
   <div class="row">
     <section class="col-xs-12 text-xs-center presentation">
-      <h1 class="text-xs-center">Euthymia</h1>
+      <h1 class="text-xs-center"><%= t('.title') %></h1>
       <%= image_tag 'angel.svg', class: 'text-xs-center space', height: 250 %>
-      <p class="text-xs-center lead text-muted space">Because knowing your emotions matters</p>
+      <p class="text-xs-center lead text-muted space"><%= t('.description') %></p>
     </section>
   </div>
 
   <section class="description row">
 
     <div class="col-xs-12 col-md-6  space-4x">
-      <p class="text-justify">
-        It's great to write about you, it increase your knowing about yourself. But sometimes even we don't know, because of the mix of feelings we get.
-      </p>
-      <p class="text-justify">
-        Sometimes we just don't see where we are heading with our emotions.
-      </p>
+      <p class="text-justify"><%= t('.about') %></p>
       <p class="text-xs-center">
         <%= image_tag 'unicorn.svg', height: 150 %>
       </p>
-      <p class="lead space-2x text-xs-center text-orange">We are here to help you!</p>
+      <p class="lead space-2x text-xs-center text-orange"><%= t('.motivated') %></p>
     </div>
 
     <div class="col-xs-12 col-md-6 get-started space-2x">
       <div class="text-xs-center">
-        <h2 class="text-xs-center space-4x">Ready ?</h2>
+        <h2 class="text-xs-center space-4x"><%= t('.get_started.title') %></h2>
         <p class="text-xs-center space"><%= image_tag 'cool.svg', height: 100 %></p>
-        <%= link_to mdi_on_end('chevron-right', "Get Started"),
+        <%= link_to mdi_on_end('chevron-right', t('.get_started.button')),
          new_user_registration_path, class: 'btn-lg btn-xs-block btn-orange btn-hg btn space' %>
       </div>
     </div>
@@ -44,27 +39,27 @@
     <div class="col-xs-12 col-md-4 space-2x text-xs-center">
       <%= image_tag 'features/pencil.svg', height: 70 %>
       <p class="text-xs-center space lead">
-        Markdown
+        <%= t('.features.markdown.title') %>
       </p>
       <p>
-        With markdown syntax support you can write and format your entries as you go. Making easier to read back.
+        <%= t('.features.markdown.description') %>
       </p>
     </div>
 
     <div class="col-xs-12 col-md-4 space-2x text-xs-center">
       <%= image_tag 'features/bookmark.svg', height: 70 %>
       <p class="lead space">
-        Bookmark your entries
+        <%= t('.features.bookmark.title') %>
       </p>
       <p>
-        Make easy to remember the great times and the important notes about you. At a click of distance.
+        <%= t('.features.bookmark.description') %>
       </p>
     </div>
 
     <div class="col-xs-12 col-md-4 space-2x text-xs-center">
       <%= image_tag 'features/key.svg', height: 70 %>
-      <p class="lead space">Everything is private</p>
-      <p>Your journals and entries are only private. No more messing with permissions or leting something out because you forgot to toggle something.</p>
+      <p class="lead space"><%= t('.features.private.title') %></p>
+      <p><%= t('.features.private.description') %></p>
     </div>
 
   </div>
@@ -79,21 +74,9 @@
 
     <div class="col-xs-12 col-md-8 col-md-offset-2 text-xs-center space-bottom-3x">
       <%= image_tag 'features/analysis.svg', height: 100 %>
-      <h2 class="space">Natural language analysis</h2>
+      <h2 class="space"><%= t('.features.analysis.title') %></h2>
       <p>
-        To help you indentifying you mixed emotions, we use the powerful
-        <a href="https://indico.io" target="_blank">Indico</a>
-        API to process the entries.
-        <strong>But do not worry !</strong>
-        no data is kept on their side It is used to identify the 4 more common emotions:
-        <i>Joy</i>,
-        <i>surprise</i>,
-        <i>sadness</i>,
-        <i>fear</i>
-        and
-        <i>anger</i>
-        and the overall sentiment about the entry.
-      </p>
+        <%= t('.features.analysis.description') %>
     </div>
 
   </div>
@@ -102,13 +85,11 @@
 <!-- end container fluid -->
 <footer class="footer">
   <div class="container">
-    <span class="pull-md-left">Emojis by
+    <span class="pull-md-left"><%= t('.footer.emojis') %>
       <a href="http://emojione.com" target="_blank">Emojione</a>
     </span>
     <br class="hidden-md-up">
-    <span class="pull-md-right">Made with
-      <%= image_tag 'heart-ribbon.svg', height: 20 %>
-      by
+    <span class="pull-md-right"><%= t('.footer.made_with_html', icon: image_tag('heart-ribbon.svg', height: 20)) %>
       <a target="_blank" href="https://twitter.com/jaoevangelista">João Pedro Evangelista</a>
     </span>
   </div>

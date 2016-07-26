@@ -1,7 +1,7 @@
 <section class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h2 class="text-xs-center">Edit Account</h2>
+      <h2 class="text-xs-center"><%= t('.title') %></h2>
     </div>
   </div>
   <div class="row">
@@ -26,7 +26,7 @@
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div class="text-xs-center text-warning">Currently waiting confirmation for:
+      <div class="text-xs-center text-warning"><%= t('.waiting_confirmation') %>:
         <%= resource.unconfirmed_email %>
       </div>
       <% end %>
@@ -35,13 +35,12 @@
           <div class="form-group">
             <%= f.label :password, class: 'control-label' %>
             <small>
-              <i class="text-muted">(leave blank if you don't want to change it)</i>
+              <i class="text-muted"><%= t('.password_tip') %></i>
             </small>
             &nbsp;&nbsp;
             <% if @minimum_password_length %>
               <small class="text-muted">
-                <%= @minimum_password_length %>
-                characters minimum
+                <%= t('.password_length', length: @minimum_password_length) %>
               </small>
             <% end %>
             <%= f.password_field :password, class: 'form-control form-text', autocomplete: "off" %>
@@ -62,7 +61,7 @@
           <div class="form-group">
           <%= f.label :current_password, class: 'control-label' %>
           <small>
-            <i class="text-muted">(we need your current password to confirm your changes)</i>
+            <i class="text-muted"><%= t('.password_change_confirmation') %></i>
           </small>
           <%= f.password_field :current_password, class: 'form-control form-text', autocomplete: "off" %>
           </div>
@@ -70,7 +69,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Update", class: 'btn btn-lg btn-xs-block btn-success' %>
+        <%= f.submit t('.update_button'), class: 'btn btn-lg btn-xs-block btn-success' %>
       </div>
       <% end %>
     </div>
@@ -78,13 +77,13 @@
   <div class="row">
     <hr>
     <div class="col-xs-12 space-2x">
-      <h5 class="text-xs-center">Danger Zone</h5>
+      <h5 class="text-xs-center"><%= t('.danger_zone.title') %></h5>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <p>Unhappy?</p>
-        <%= delete_link mdi('alert-outline',"Cancel my account"),
+      <p class="lead"><%= t('.danger_zone.description') %></p>
+        <%= delete_link mdi('alert-outline', t('.danger_zone.cancel_account')),
          registration_path(resource_name), class: 'btn btn-danger' %>
     </div>
   </div>

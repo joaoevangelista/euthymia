@@ -32,17 +32,17 @@ module ApplicationHelper
 
   def create_entry_nav_link(journal)
     "<li>
-    #{link_to 'New Entry', new_journal_entry_path(journal), class: 'dropdown-item'}
+    #{link_to I18n.t('helpers.application.new_entry'), new_journal_entry_path(journal), class: 'dropdown-item'}
     </li>".html_safe
   end
 
   def delete_link(text, href, options = {})
     link_to text, href, method: :delete, data: {
-      confirm: "This can't ben undone !",
-      confirm_title: 'Are you sure ?',
+      confirm: I18n.t('helpers.application.delete_link.confirm'),
+      confirm_title: I18n.t('helpers.application.delete_link.confirm_title'),
       confirm_fade: true,
-      confirm_cancel: 'Cancel',
-      confirm_proceed: 'Ok',
+      confirm_cancel: I18n.t('helpers.application.delete_link.confirm_cancel'),
+      confirm_proceed: I18n.t('helpers.application.delete_link.confirm_proceed'),
       confirm_cancel_class: 'btn btn-secondary',
       confirm_proceed_class: 'btn btn-orange'
     }, class: options[:class]
