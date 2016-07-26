@@ -68,6 +68,8 @@ pt-BR:
       avg_emotions: 'Média de emoções'
       edit: 'Editar'
   entries:
+    entry_item:
+      written_at: 'Escrito em'
     index:
       no_entries: 'Oh, nenhum registro ainda neste diário, Você gostaria de criar '
       new_one: 'um novo ?'
@@ -78,9 +80,10 @@ pt-BR:
       open_zen_mode: 'Abrir Modo Zen'
       accomplishiment_placeholder: 'Qual foi a melhor coisa que aconteceu com você hoje ?'
     show:
-      written_at: 'Escrito às %{datetime}'
+      written_at: 'Escrito em %{datetime}'
       overall_sentiments: 'Sentimentos gerais'
       most_likely_emotions: 'As emoções mais prováveis'
+
       edit_option: 'Editar'
       delete_option: 'Apagar'
 # Active record
