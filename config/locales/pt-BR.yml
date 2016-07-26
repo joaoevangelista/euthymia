@@ -29,7 +29,7 @@ pt-BR:
           title: 'Análise de linguagem natural'
           description: |
                        "Para te ajudar a identificar sua emoções misturadas,
-                       nós usadmos a poderosa Indico API para processar os regitros.
+                       nós usadmos a poderosa Indico API para processar os registros.
                        Mas não se preocupe, somente maquinas veem os registros e nada é salvo.
                        É usado para identificar as 4 emoções mais comuns: Felicidade, surpresa,
                        tristeza, medo e raiva; e o sentimento entorno"
@@ -64,7 +64,7 @@ pt-BR:
       title: 'Detalhes de %{name}'
       last_updated: 'Último momento atualizado foi às: %{datetime}'
       count: 'Você tem %{total} registros neste diário'
-      or_create: 'ou escreva um novo regitro aqui'
+      or_create: 'ou escreva um novo registro aqui'
       see_entries: 'Veja os registros'
       avg_emotions: 'Média de emoções'
       edit: 'Editar'
