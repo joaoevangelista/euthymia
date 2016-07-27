@@ -33,7 +33,7 @@
       <div class="form-group <%= entry.errors[:body].empty? ? '' : 'has-danger' %>">
         <button type="button" class="pull-xs-right open-zen btn-sm btn-link">
           <span><i class="mdi mdi-half mdi-auto-fix"></i></span>&nbsp;&nbsp;<%= t('.open_zen_mode') %></button>
-        <%= f.text_area :body, class: 'form-control form-text zen-mode ',
+        <%= f.text_area :body, class: 'form-control form-text zen-mode readable-text',
         placeholder: t('.description_placeholder') %>
         <% if entry.errors[:body].any? %>
         <% entry.errors[:body].each do |message| %>
