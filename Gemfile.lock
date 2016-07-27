@@ -121,6 +121,8 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     hashie (3.4.4)
+    health_check (2.2.1)
+      rails (>= 4.0)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     http_accept_language (2.0.5)
@@ -363,6 +365,7 @@ DEPENDENCIES
   gemojione
   guard-rails
   guard-rspec
+  health_check
   http_accept_language
   indico
   jbuilder (~> 2.5)

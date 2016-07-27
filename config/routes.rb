@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  health_check_routes('status')
+
   resources :journals do
     resources :entries do
       put :favorite, on: :member, action: :favorite
