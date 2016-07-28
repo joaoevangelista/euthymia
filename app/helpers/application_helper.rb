@@ -32,7 +32,8 @@ module ApplicationHelper
 
   def create_entry_nav_link(journal)
     "<li>
-    #{link_to I18n.t('helpers.application.new_entry'), new_journal_entry_path(journal), class: 'dropdown-item'}
+    #{link_to I18n.t('helpers.application.new_entry'),
+              new_journal_entry_path(journal), class: 'dropdown-item'}
     </li>".html_safe
   end
 

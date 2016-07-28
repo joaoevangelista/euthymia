@@ -19,8 +19,7 @@ class User < ApplicationRecord
 
   after_create :create_settings
 
-  def self.find_for_oauth(auth, identity = nil,signed_in_resource = nil)
-
+  def self.find_for_oauth(auth, identity = nil, signed_in_resource = nil)
     # If a signed_in_resource is provided it always overrides the existing user
     # to prevent the identity being locked with accidentally created accounts.
     # Note that this may leave zombie accounts (with no associated identity) which

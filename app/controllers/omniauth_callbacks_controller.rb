@@ -6,7 +6,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def provider
     auth = request.env['omniauth.auth']
     identity = Identity.find_for_oauth(auth)
-    @user = User.find_for_oauth(auth, identity ,current_user)
+    @user = User.find_for_oauth(auth, identity, current_user)
 
     if @user.persisted?
       link_account_or_signin(identity, @user, auth)
@@ -35,11 +35,13 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def link_account_or_signin(identity, user, auth)
     if user_signed_in?
       if identity.user == current_user
-        redirect_to edit_user_registration_path(user), notice: I18n.t('omniauth.already_linked')
+        redirect_to edit_user_registration_path(user),
+                    notice: I18n.t('omniauth.already_linked')
       else
         identity.user = current_user
         identity.save
-        redirect_to edit_user_registration_path(user), notice: I18n.t('omniauth.successfully_linked')
+        redirect_to edit_user_registration_path(user),
+                    notice: I18n.t('omniauth.successfully_linked')
       end
     else
       sign_in_and_redirect user, event: :authentication

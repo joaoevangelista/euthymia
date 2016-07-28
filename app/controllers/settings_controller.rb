@@ -1,6 +1,6 @@
+# frozen_string_literal: true
 # :nodoc:
 class SettingsController < ApplicationController
-
   before_action :authenticate_user!
   before_action :set_settings
 
@@ -12,14 +12,15 @@ class SettingsController < ApplicationController
   def update
     respond_to do |format|
       if @setting.update(setting_params)
-        format.html { redirect_to settings_path,
-           notice: 'Settings updated successfully'}
-         else
-           format.html { render :index }
+        format.html do
+          redirect_to settings_path,
+                      notice: 'Settings updated successfully'
+        end
+      else
+        format.html { render :index }
       end
     end
   end
-
 
   private
 

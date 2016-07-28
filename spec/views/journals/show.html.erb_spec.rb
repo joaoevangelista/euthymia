@@ -3,8 +3,8 @@ require 'rails_helper'
 
 RSpec.describe 'journals/show', type: :view do
   before(:each) do
-  view.extend EmotionsHelper
-  @avg_emotions = {
+    view.extend EmotionsHelper
+    @avg_emotions = {
       joy: 0.3123,
       anger: 0,
       surprise: 0.2112,
