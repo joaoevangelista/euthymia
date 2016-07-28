@@ -59,7 +59,9 @@ gem 'exception_notification'
 gem 'health_check'
 # APIs
 gem 'grape'
-gem 'grape-active_model_serializers'
+gem 'grape-entity'
+gem 'grape-swagger'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
