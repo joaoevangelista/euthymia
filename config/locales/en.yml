@@ -157,6 +157,11 @@ en:
   onmiauth:
     successfully_linked: 'Successfully linked account !'
     already_linked: 'Account already linked !'
+  settings:
+    index:
+      title: 'Settings'
+      daily_option: 'Daily'
+      weekly_option: 'Weekly'
 # Active record
   activerecord:
     models:
@@ -178,6 +183,9 @@ en:
       identity:
         one: 'Identity'
         other: 'Identities'
+      setting:
+        one: 'Setting'
+        other: 'Settings'
     attributes:
       user:
         name: 'Name'
@@ -192,6 +200,9 @@ en:
         entry_header: 'Header'
       journal:
         title: 'Title'
+      setting:
+        reminder_enabled: 'Enable reminder'
+        reminder_timer: 'Remind me'
     errors:
       message:
         blank: "Can't blank"

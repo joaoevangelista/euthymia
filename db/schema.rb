@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725195112) do
+ActiveRecord::Schema.define(version: 20160727233627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,15 @@ ActiveRecord::Schema.define(version: 20160725195112) do
     t.index ["user_id"], name: "index_sentiments_on_user_id", using: :btree
   end
 
+  create_table "settings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.boolean  "reminder_enabled", default: false
+    t.string   "reminder_timer",   default: "daily"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.index ["user_id"], name: "index_settings_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -98,4 +107,5 @@ ActiveRecord::Schema.define(version: 20160725195112) do
   add_foreign_key "journals", "users"
   add_foreign_key "sentiments", "entries"
   add_foreign_key "sentiments", "users"
+  add_foreign_key "settings", "users"
 end

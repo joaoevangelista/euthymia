@@ -156,6 +156,11 @@ pt-BR:
   onmiauth:
     successfully_linked: 'Conta conectada com sucesso !'
     already_linked: 'Conta já conectada !'
+  settings:
+    index:
+      title: 'Settings'
+      daily_option: 'Diariamente'
+      weekly_option: 'Semanalmente'
 # Active record
   activerecord:
     models:
@@ -177,6 +182,9 @@ pt-BR:
       identity:
         one: 'Identidade'
         other: 'Identidades'
+      setting:
+        one: 'Configuração'
+        other: 'Confiurações'
     attributes:
       user:
         name: 'Nome'
@@ -191,6 +199,9 @@ pt-BR:
         entry_header: 'Imagem'
       journal:
         title: 'Título'
+      setting:
+        reminder_enabled: 'Ligar lembrete'
+        reminder_timer: 'Periodo do lembrete'
     errors:
       message:
         blank: "Não pode ser branco"

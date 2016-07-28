@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-xs-center"><%= t('.title') %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 space-4x">
+      <h4 class="page-header">
+        Reminders
+      </h4>
+      <p>
+        This is meant to remind you to write about you, but you can control
+        whenever it happens.
+      </p>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= form_for(@setting, url: update_settings_path, method: :put) do |f| %>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group <%= @setting.errors[:reminder_enabled].empty? ? '' : 'has-danger' %>">
+            <%= f.check_box :reminder_enabled, class: 'checkbox' %>
+            <%= f.label :reminder_enabled, class: 'control-label' %>
+            <% if @setting.errors[:reminder_enabled].any? %>
+            <% @setting.errors[:reminder_enabled].each do |message| %>
+            <span class="help-block"><%= message.capitalize %></span>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group <%= @setting.errors[:reminder_timer].empty? ? '' : 'has-danger' %>">
+            <%= f.label :reminder_timer, class: 'control-label' %>
+            <%= f.select :reminder_timer, [[t('.daily_option'), 'daily'], [t('.weekly_option'), 'weekly']] , {prompt: true},class: 'form-control form-text' %>
+            <% if @setting.errors[:reminder_timer].any? %>
+            <% @setting.errors[:reminder_timer].each do |message| %>
+            <span class="help-block"><%= message.capitalize %></span>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <%= f.submit class: 'btn btn-xs-block btn-success btn-lg' %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
