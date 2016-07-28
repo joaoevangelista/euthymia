@@ -6,6 +6,7 @@
   <%= mdi('chevron-down') %></a>
   <ul class="dropdown-menu dropdown-menu-right xs-dropdown" aria-labelledby="navbarDropdown1">
     <li><%= link_to mdi('pencil', t('navbar.profile.edit')), edit_user_registration_path(current_user), class: 'dropdown-item' %></li>
+    <li><%= link_to mdi('settings', t('navbar.profile.settings')), settings_path, class: 'dropdown-item' %></li>
     <li class="divider"></li>
     <li><%= link_to(mdi('logout-variant', t('navbar.profile.signout')), destroy_user_session_path, method: :delete, class: 'dropdown-item') %></li>
   </ul>

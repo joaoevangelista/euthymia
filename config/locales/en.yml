@@ -49,6 +49,7 @@ en:
     profile:
       edit: 'Edit Account'
       signout: 'Sign Out'
+      settings: 'Settings'
   journals:
     index:
       title: 'Journals'

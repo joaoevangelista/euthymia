@@ -48,6 +48,7 @@ pt-BR:
     profile:
       edit: 'Editar Conta'
       signout: 'Sair'
+      settings: 'Configurações'
   journals:
     index:
       title: 'Diários'
