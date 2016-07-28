@@ -57,6 +57,9 @@ gem 'cloudinary'
 gem 'exception_notification'
 # Health Status
 gem 'health_check'
+# APIs
+gem 'grape'
+gem 'grape-active_model_serializers'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

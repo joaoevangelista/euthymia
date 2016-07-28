@@ -16,5 +16,11 @@ Rails.application.routes.draw do
   patch 'users/:id/finish_signup' => 'users#finish_signup', as: :end_finish_signup
   devise_for :users, controllers: { registrations: 'registrations',
                                     omniauth_callbacks: 'omniauth_callbacks' }
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  # -------------------------------------------------------------------------
+  # ---------------------------------- API ----------------------------------
+  # -------------------------------------------------------------------------
+
+  mount API::Base, at: '/'
+
 end
