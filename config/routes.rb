@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  use_doorkeeper
   get 'settings' => 'settings#index', as: :settings
   put 'settings' => 'settings#update', as: :update_settings
   health_check_routes('status')

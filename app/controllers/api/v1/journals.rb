@@ -4,6 +4,10 @@ module API
     class Journals < Grape::API
       include API::V1::Defaults
 
+      before do
+        doorkeeper_authorize!
+      end
+
       resource :journals do
 
         desc 'Return all journals of the given user',

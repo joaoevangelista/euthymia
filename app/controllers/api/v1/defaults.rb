@@ -1,3 +1,5 @@
+require 'doorkeeper/grape/helpers'
+
 module API
   module V1
     module Defaults
@@ -8,7 +10,8 @@ module API
         version 'v1', using: :path
         default_format  :json
         format :json
-      
+
+        helpers Doorkeeper::Grape::Helpers
         helpers do
           def permitted_params
             @permitted_params ||= declared(params, include_missing: false)

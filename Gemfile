@@ -62,6 +62,9 @@ gem 'grape'
 gem 'grape-entity'
 gem 'grape-swagger'
 gem 'rack-cors', :require => 'rack/cors'
+# API Authentication
+gem 'doorkeeper'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
