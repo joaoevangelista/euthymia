@@ -31,6 +31,7 @@ module API
 
         post '' do
           journal = Journal.new(permitted_params.to_h)
+          journal.user = current_user
           if journal.save
             status 201
             present journal, with:  API::V1::Entities::Journal
@@ -59,7 +60,7 @@ module API
 
         desc 'Destroy the given journal', entity: API::V1::Entities::Journal
         delete ':id' do
-          if Journal.destroy params[:id]
+          if Journal.where(user: current_user, id: params[:id]).try{|j| j.destroy}
             status 204
           else
             status 400
