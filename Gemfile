@@ -61,6 +61,7 @@ gem 'health_check'
 gem 'grape'
 gem 'grape-entity'
 gem 'grape-swagger'
+gem 'grape-swagger-entity'
 gem 'rack-cors', :require => 'rack/cors'
 # API Authentication
 gem 'doorkeeper'

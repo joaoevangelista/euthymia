@@ -131,6 +131,9 @@ GEM
       multi_json (>= 1.3.2)
     grape-swagger (0.22.0)
       grape (>= 0.12.0)
+    grape-swagger-entity (0.1.4)
+      grape-entity
+      grape-swagger (>= 0.20.4)
     guard (2.14.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -413,6 +416,7 @@ DEPENDENCIES
   grape
   grape-entity
   grape-swagger
+  grape-swagger-entity
   guard-rails
   guard-rspec
   health_check
