@@ -15,7 +15,7 @@ module API
               entity: API::V1::Entities::Journal
         get '', root: :journals do
 
-          present Journal.all, with: API::V1::Entities::Journal
+          present Journal.all_by_user(current_user), with: API::V1::Entities::Journal
         end
 
         desc 'Return single journal', entity: API::V1::Entities::Journal

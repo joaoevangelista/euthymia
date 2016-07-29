@@ -7,7 +7,7 @@ module API::Guard
 
   included do |base|
     # OAuth2 Resource Server Authentication
-    use Rack::OAuth2::Server::Resource::Bearer, 'The API' do |request|
+    use Rack::OAuth2::Server::Resource::Bearer, 'Bearer' do |request|
       # The authenticator only fetches the raw token string
 
       # Must yield access token to store it in the env
@@ -42,7 +42,7 @@ module API::Guard
     #           Defaults to empty array.
     #
     def guard!(scopes: [])
-      token_string = get_token_string()
+      token_string = get_token_string
 
       if token_string.blank?
         raise MissingTokenError
@@ -76,7 +76,7 @@ module API::Guard
     def get_token_string
       # The token was stored after the authenticator was invoked.
       # It could be nil. The authenticator does not check its existence.
-      request.env[Rack::OAuth2::Server::Resource::ACCESS_TOKEN]
+      decorated_request.env[Rack::OAuth2::Server::Resource::ACCESS_TOKEN]
     end
 
     def find_access_token(token_string)
