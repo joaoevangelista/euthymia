@@ -3,9 +3,10 @@ module API
   module V1
     class Journals < Grape::API
       include API::V1::Defaults
+      include Guard
 
       before do
-        doorkeeper_authorize!
+        guard!
       end
 
       resource :journals do
@@ -13,6 +14,7 @@ module API
         desc 'Return all journals of the given user',
               entity: API::V1::Entities::Journal
         get '', root: :journals do
+
           present Journal.all, with: API::V1::Entities::Journal
         end
 

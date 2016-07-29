@@ -64,6 +64,8 @@ gem 'grape-swagger'
 gem 'rack-cors', :require => 'rack/cors'
 # API Authentication
 gem 'doorkeeper'
+# OAuth 2 Guard on Resource Server (API)
+gem "rack-oauth2", "~> 1.0.5"
 
 
 group :development, :test do
