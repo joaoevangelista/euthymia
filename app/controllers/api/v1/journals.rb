@@ -5,7 +5,9 @@ module API
       include API::V1::Defaults
       include Guard
 
-      guard_all!
+      before do
+        guard!
+      end
 
       resource :journals do
 
