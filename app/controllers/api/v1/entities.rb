@@ -20,6 +20,11 @@ module API
         expose :updated_at
       end
 
+      class User < Grape::Entity
+        expose :id
+        expose :name
+        expose :email
+      end
     end
   end
 end
