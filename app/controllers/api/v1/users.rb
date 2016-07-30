@@ -1,7 +1,8 @@
 module API
   module V1
     class Users < Grape::API
-
+      include API::V1::Defaults
+      include Guard
 
       resource :users do
         desc 'Register a new user', entity: API::V1::Entities::User
