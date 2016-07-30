@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module API
   module V1
     class Users < Grape::API
@@ -24,7 +25,6 @@ module API
       end
 
       resource :users do
-        guard!
         desc 'Update your account data', entity: API::V1::Entities::User
         params do
           requires :name
@@ -32,6 +32,7 @@ module API
           requires :password
         end
         put '' do
+          guard!
           user = current_user
           if user.update permitted_params.to_h
             status 200
@@ -42,7 +43,6 @@ module API
           end
         end
       end
-
     end
   end
 end
