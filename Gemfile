@@ -57,6 +57,17 @@ gem 'cloudinary'
 gem 'exception_notification'
 # Health Status
 gem 'health_check'
+# APIs
+gem 'grape'
+gem 'grape-entity'
+gem 'grape-swagger'
+gem 'grape-swagger-entity'
+gem 'rack-cors', :require => 'rack/cors'
+# API Authentication
+gem 'doorkeeper'
+# OAuth 2 Guard on Resource Server (API)
+gem "rack-oauth2", "~> 1.0.5"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
