@@ -5,6 +5,7 @@ module API
     class Base < Grape::API
       mount API::V1::Journals
       mount API::V1::Entries
+      mount API::V1::Search
       add_swagger_documentation
     end
   end
