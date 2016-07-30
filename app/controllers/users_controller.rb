@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# Additional user related controller
+# Additional user related controller for finish signup
 class UsersController < ApplicationController
   before_action :set_user, only: [:finish_signup]
 
