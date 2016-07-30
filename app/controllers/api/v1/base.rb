@@ -6,6 +6,7 @@ module API
       mount API::V1::Journals
       mount API::V1::Entries
       mount API::V1::Search
+      mount API::V1::Users
       add_swagger_documentation
     end
   end
