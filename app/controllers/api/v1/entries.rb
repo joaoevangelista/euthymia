@@ -31,8 +31,10 @@ module API
           requires :id, type: Integer
         end
         get '/:id' do
-          present Entry.find_by_user(params[:id], params[:journal_id], current_user),
-                  with: API::V1::Entities::Entry
+          entry = Entry.find_by_user(params[:id], params[:journal_id], current_user)
+          emotion = Emotion.most_recent entry, current_user
+          sentiment = Sentiment.most_recent entry, current_user
+          present entry: entry, emotion: emotion, sentiment: sentiment
         end
       end
 
