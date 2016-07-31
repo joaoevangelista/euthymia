@@ -17,7 +17,12 @@ class ApplicationController < ActionController::Base
   # Override Devise method to redirect user to journals path
   # when it succeeds the login
   def after_sign_in_path_for(_resource)
-    journals_path
+    path = session[:user_return_to]
+    if path
+      path
+    else
+      journals_path
+    end
   end
 
   private
