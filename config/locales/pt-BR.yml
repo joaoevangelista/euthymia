@@ -159,9 +159,12 @@ pt-BR:
     already_linked: 'Conta já conectada !'
   settings:
     index:
-      title: 'Settings'
+      title: 'Configurações'
       daily_option: 'Diariamente'
       weekly_option: 'Semanalmente'
+      reminders:
+        title: 'Lembretes'
+        description: 'Isto é sobre te lembrar a escrever sobre você, mas você controla quando e como isso acontece.'
 # Active record
   activerecord:
     models:

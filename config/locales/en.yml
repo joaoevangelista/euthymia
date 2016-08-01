@@ -163,6 +163,9 @@ en:
       title: 'Settings'
       daily_option: 'Daily'
       weekly_option: 'Weekly'
+      reminders:
+        title: 'Reminders'
+        description: 'This is meant to remind you to write about you, but you can control whenever it happens.'
 # Active record
   activerecord:
     models:
