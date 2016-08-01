@@ -3,8 +3,8 @@
 class Journal < ApplicationRecord
   validates :title, presence: true
   belongs_to :user
-  has_many :entries
-  has_many :emotions, through: :entries
+  has_many :entries, dependent: :delete_all
+  has_many :emotions, through: :entries, dependent: :delete_all
 
   # Fetches all journals by the given user, usually
   # the current_user of authentication
