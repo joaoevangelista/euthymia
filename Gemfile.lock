@@ -400,7 +400,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  bootstrap (~> 4.0.0.alpha3)
+  bootstrap (~> 4.0.0.alpha3.1)
   byebug
   carrierwave
   cloudinary
