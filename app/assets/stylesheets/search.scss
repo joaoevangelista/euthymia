@@ -1,22 +1,42 @@
 .search-input, .btn-search {
   border: none;
-  border-bottom: 2px solid $brand-orange;
+  background: $nav-color;
+  color: $white;
+  border-bottom: 2px solid $white;
   border-radius: 0;
 }
 
 .search-input:hover, .btn-search:hover, .search-input:focus, .btn-search:focus {
   border: none;
-  border-bottom: 2px solid $brand-red;
+  border-bottom: 2px solid $white;
   border-radius: 0;
+  background: $nav-color;
+  color: $white;
 }
 
 .btn-search {
-  color: $brand-orange;
+  color: $white;
 }
 
 .btn-search:hover, .btn-search:active, .btn-search:focus {
-  background-color: $brand-red;
-  color: white;
+  background-color: $nav-color;
+  color: $white;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
+}
+
+.search-input::-webkit-input-placeholder {
+   color: $white;
+}
+
+.search-input:-moz-placeholder { /* Firefox 18- */
+   color: $white;
+}
+
+.search-input::-moz-placeholder {  /* Firefox 19+ */
+   color: $white;
+}
+
+.search-input:-ms-input-placeholder {
+   color: $white;
 }

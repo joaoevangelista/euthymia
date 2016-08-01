@@ -1,8 +1,9 @@
 $colDefault: #ff9068;
 $colHighlight: #fd746c;
+$background-color: $nav-color;
 
 .navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
-  color: $colDefault;
+  color: $white;
 }
 
 .navbar-light .navbar-brand:hover,
@@ -18,12 +19,12 @@ $colHighlight: #fd746c;
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.active:focus,
 .navbar-light .navbar-nav .nav-link.active:hover  {
-  color: $colHighlight;
+  color: $white;
 }
 
 .navbar-light {
-  border-bottom: 2px solid whitesmoke;
-  background-color: $nav-color;
+  border-bottom: 2px solid $colHighlight;
+  background-color: $colDefault;
 }
 
 @media (max-width: 62em) {
@@ -53,17 +54,22 @@ $colHighlight: #fd746c;
     width: 100%;
     background-color: $nav-color;
     border: none;
-    color: $brand-orange;
+    color: $white;
+  }
+
+  .xs-dropdown:hover {
+    background-color: darken($nav-color, 10%);
+    color: $white;
   }
 
   .dropdown-item {
-    color: $brand-orange;
+    color: $white;
   }
   .dropdown-item:hover, .dropdown-item:active {
-    color: $brand-red;
+    color: $gray-dark;
   }
   .navbar-toggler {
     outline: none;
-    color: $brand-orange;
+    color: $white;
   }
 }
