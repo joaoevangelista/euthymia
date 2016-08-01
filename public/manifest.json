@@ -1,10 +1,10 @@
 {
  "name": "Euthymia",
  "theme_color": "#FD746C",
- "background_color": "#FD746C",
+ "background_color": "#f7f7f7",
  "start_url": "/",
  "display": "standalone",
- "orientation": "landscape",
+ "orientation": "portrait",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
