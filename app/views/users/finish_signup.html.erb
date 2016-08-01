@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2 space">
+        <div class="col-xs-12 col-md-8 offset-md-2 space">
           <%= form_for(current_user, :as => 'user', :url => end_finish_signup_path(current_user), :html => { role: 'form'}) do |f| %>
           <% if @show_errors && current_user.errors.any? %>
           <div id="error_explanation alert alert-danger">

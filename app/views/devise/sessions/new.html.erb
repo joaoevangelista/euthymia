@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4 space">
+    <div class="col-xs-12 col-md-4 offset-md-4 space">
       <p class="welcome-text">
         <%= t('.message') %>
       </p>
@@ -13,7 +13,7 @@
   </div>
   <% if flash[:alert] %>
     <div class="row">
-      <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="col-xs-12 col-md-6 offset-md-3">
         <p>
           <span class="text-danger"><i class="fa fa-times-circle fa-fw"></i></span>
           <%= flash[:alert] %>
@@ -22,7 +22,7 @@
     </div>
   <% end %>
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <div class="col-xs-12 col-md-6 offset-md-3">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group <%= flash[:alert] ? 'has-danger' : ''%>">
         <div class="input-group">

@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap', '~> 4.0.0.alpha3.1'
 gem 'rails-assets-tether', '>= 1.1.0', source: 'https://rails-assets.org/'
 gem 'font-awesome-sass', '~> 4.6.2'
 # https://github.com/bluerail/twitter-bootstrap-rails-confirm
