@@ -1,5 +1,10 @@
 {
  "name": "App",
+ "theme_color": "#FD746C",
+ "background_color": "#FD746C",
+ "start_url": "/",
+ "display": "standalone",
+ "orientation": "landscape",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
