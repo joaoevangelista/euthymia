@@ -12,9 +12,8 @@
     font-size: 1rem;
     color: #8a9199;
 }
-
-select.form-text {
-  height: 4rem;
+select.form-control:not([size]):not([multiple]) {
+  height: 3.5rem;
 }
 
 textarea.form-text {
