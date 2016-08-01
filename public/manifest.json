@@ -1,5 +1,6 @@
 {
  "name": "Euthymia",
+ "short_name": "Euthymia",
  "theme_color": "#FD746C",
  "background_color": "#f7f7f7",
  "start_url": "/",
