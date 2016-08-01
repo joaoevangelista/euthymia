@@ -86,7 +86,7 @@ pt-BR:
       not_ready: 'Emoções ainda não prontas.'
       likely_emotions: 'Emoções mais prováveis'
     index:
-      no_entries: 'Oh, nenhum registro ainda neste diário, Você gostaria de criar '
+      no_entries_html: 'Oh, nenhum registro ainda neste diário, Você gostaria de criar %{link}'
       new_one: 'um novo ?'
       new_entry: 'Novo Registro'
     form:
